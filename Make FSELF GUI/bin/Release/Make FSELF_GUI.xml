@@ -705,6 +705,20 @@
             <param name="sender">The Sender.</param>
             <param name="e">The Event Arguments.</param>
         </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.PythonCallToolStrip_Click(System.Object,System.EventArgs)">
+            <summary>
+            On Tool Strip Python Call Script click do.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.PythonCallContextMenu_Click(System.Object,System.EventArgs)">
+            <summary>
+            On ContextMenu Python Call Script click do.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
         <member name="M:Make_FSELF.Make_FSELF_GUI.Make_FSELF_GUI_FormClosing(System.Object,System.Windows.Forms.FormClosingEventArgs)">
             <summary>
             On Closing of Form.

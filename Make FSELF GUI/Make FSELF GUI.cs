@@ -277,6 +277,7 @@ namespace Make_FSELF {
             b1ContextMenu.Enabled = b2ContextMenu.Enabled = b4ContextMenu.Enabled = b8ContextMenu.Enabled = b16ContextMenu.Enabled = false;
         }
 
+        
         /// <summary>
         /// Get the User Choosen Byte Allign.
         /// </summary>
@@ -926,6 +927,23 @@ namespace Make_FSELF {
         private void ClearContextMenu_Click(object sender, EventArgs e) { rtbAuthInfo.Clear(); }
 
         /// <summary>
+        /// On Tool Strip Python Call Script click do.
+        /// </summary>
+        /// <param name="sender">The Sender.</param>
+        /// <param name="e">The Event Arguments.</param>
+        private void PythonCallToolStrip_Click(object sender, EventArgs e) {
+            if (pythonCallToolStrip.Checked) pythonCallToolStrip.Checked = pythonCallContextMenu.Checked = false;
+            else pythonCallToolStrip.Checked = pythonCallContextMenu.Checked = true;
+        }
+
+        /// <summary>
+        /// On ContextMenu Python Call Script click do.
+        /// </summary>
+        /// <param name="sender">The Sender.</param>
+        /// <param name="e">The Event Arguments.</param>
+        private void PythonCallContextMenu_Click(object sender, EventArgs e) { pythonCallToolStrip.PerformClick(); }
+
+        /// <summary>
         /// On Closing of Form.
         /// </summary>
         /// <param name="sender">The Sender.</param>
@@ -1000,13 +1018,16 @@ namespace Make_FSELF {
             Process python = new Process();
             python.OutputDataReceived += MFSELF_OutputHandler;
             python.ErrorDataReceived += MFSELF_ErrorHandler;
-            run.FileName = "python.exe";
+
+            if (pythonCallToolStrip.Checked) run.FileName = make_fself;
+            else run.FileName = "python.exe";
+
             run.UseShellExecute = false;
             run.RedirectStandardOutput = run.CreateNoWindow = run.RedirectStandardError = true;            
 
             foreach (string elf in toFakeSign) {
-                run.Arguments = "make_fself.py" + " " + args + elf + " " + elf.Replace(".elf", ".self");
-                MessagBox.Debug("Run with: " + "make_fself.py" + " " + args + elf + " " + elf.Replace(".elf", ".self"));
+                if (pythonCallToolStrip.Checked) run.Arguments = args + elf + " " + elf.Replace(".elf", ".self");
+                else run.Arguments = make_fself + " " + args + elf + " " + elf.Replace(".elf", ".self");
                 python.StartInfo = run;
                 errorString = string.Empty;
                 try {

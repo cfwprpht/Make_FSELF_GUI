@@ -123,6 +123,8 @@
             this.hexifyAuthInfoContextMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutContextMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.closeContextMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.pythonCallToolStrip = new System.Windows.Forms.ToolStripMenuItem();
+            this.pythonCallContextMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.contextRtb.SuspendLayout();
             this.groupAdvanced.SuspendLayout();
@@ -233,7 +235,7 @@
             this.batchNormalToolStrip});
             this.normalToolStrip.Image = ((System.Drawing.Image)(resources.GetObject("normalToolStrip.Image")));
             this.normalToolStrip.Name = "normalToolStrip";
-            this.normalToolStrip.Size = new System.Drawing.Size(127, 22);
+            this.normalToolStrip.Size = new System.Drawing.Size(152, 22);
             this.normalToolStrip.Text = "Normal";
             // 
             // normalNormalToolStrip
@@ -259,7 +261,7 @@
             this.batchAdvancedToolStrip});
             this.advancedToolStrip.Image = ((System.Drawing.Image)(resources.GetObject("advancedToolStrip.Image")));
             this.advancedToolStrip.Name = "advancedToolStrip";
-            this.advancedToolStrip.Size = new System.Drawing.Size(127, 22);
+            this.advancedToolStrip.Size = new System.Drawing.Size(152, 22);
             this.advancedToolStrip.Text = "Advanced";
             // 
             // normalAdvancedToolStrip
@@ -283,7 +285,8 @@
             this.optionsToolStrip.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.PathsToolStrip,
             this.hexifyToolStrip,
-            this.hexifyAuthInfoToolStrip});
+            this.hexifyAuthInfoToolStrip,
+            this.pythonCallToolStrip});
             this.optionsToolStrip.Image = ((System.Drawing.Image)(resources.GetObject("optionsToolStrip.Image")));
             this.optionsToolStrip.Name = "optionsToolStrip";
             this.optionsToolStrip.Size = new System.Drawing.Size(77, 20);
@@ -296,7 +299,7 @@
             this.AuthInfoTxtToolStrip});
             this.PathsToolStrip.Image = ((System.Drawing.Image)(resources.GetObject("PathsToolStrip.Image")));
             this.PathsToolStrip.Name = "PathsToolStrip";
-            this.PathsToolStrip.Size = new System.Drawing.Size(160, 22);
+            this.PathsToolStrip.Size = new System.Drawing.Size(168, 22);
             this.PathsToolStrip.Text = "Paths";
             // 
             // MFSELFPYToolStrip
@@ -358,7 +361,7 @@
             this.hexAllignToolStrip});
             this.hexifyToolStrip.Image = ((System.Drawing.Image)(resources.GetObject("hexifyToolStrip.Image")));
             this.hexifyToolStrip.Name = "hexifyToolStrip";
-            this.hexifyToolStrip.Size = new System.Drawing.Size(160, 22);
+            this.hexifyToolStrip.Size = new System.Drawing.Size(168, 22);
             this.hexifyToolStrip.Text = "Hexify";
             // 
             // byteAllignToolStrip
@@ -453,7 +456,7 @@
             // 
             this.hexifyAuthInfoToolStrip.Image = ((System.Drawing.Image)(resources.GetObject("hexifyAuthInfoToolStrip.Image")));
             this.hexifyAuthInfoToolStrip.Name = "hexifyAuthInfoToolStrip";
-            this.hexifyAuthInfoToolStrip.Size = new System.Drawing.Size(160, 22);
+            this.hexifyAuthInfoToolStrip.Size = new System.Drawing.Size(168, 22);
             this.hexifyAuthInfoToolStrip.Text = "Hexify Auth Info";
             this.hexifyAuthInfoToolStrip.Click += new System.EventHandler(this.HexifyAuthInfoToolStrip_Click);
             // 
@@ -858,7 +861,8 @@
             this.optionsContextMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pathsContextMenu,
             this.hexifyContextMenu,
-            this.hexifyAuthInfoContextMenu});
+            this.hexifyAuthInfoContextMenu,
+            this.pythonCallContextMenu});
             this.optionsContextMenu.Image = ((System.Drawing.Image)(resources.GetObject("optionsContextMenu.Image")));
             this.optionsContextMenu.Name = "optionsContextMenu";
             this.optionsContextMenu.Size = new System.Drawing.Size(116, 22);
@@ -871,7 +875,7 @@
             this.authinfotxtContextMenu});
             this.pathsContextMenu.Image = ((System.Drawing.Image)(resources.GetObject("pathsContextMenu.Image")));
             this.pathsContextMenu.Name = "pathsContextMenu";
-            this.pathsContextMenu.Size = new System.Drawing.Size(160, 22);
+            this.pathsContextMenu.Size = new System.Drawing.Size(168, 22);
             this.pathsContextMenu.Text = "Paths";
             // 
             // makefselfpyContextMenu
@@ -933,7 +937,7 @@
             this.hexAllignContextMenu});
             this.hexifyContextMenu.Image = ((System.Drawing.Image)(resources.GetObject("hexifyContextMenu.Image")));
             this.hexifyContextMenu.Name = "hexifyContextMenu";
-            this.hexifyContextMenu.Size = new System.Drawing.Size(160, 22);
+            this.hexifyContextMenu.Size = new System.Drawing.Size(168, 22);
             this.hexifyContextMenu.Text = "Hexify";
             // 
             // byteAllignContextMenu
@@ -1028,7 +1032,7 @@
             // 
             this.hexifyAuthInfoContextMenu.Image = ((System.Drawing.Image)(resources.GetObject("hexifyAuthInfoContextMenu.Image")));
             this.hexifyAuthInfoContextMenu.Name = "hexifyAuthInfoContextMenu";
-            this.hexifyAuthInfoContextMenu.Size = new System.Drawing.Size(160, 22);
+            this.hexifyAuthInfoContextMenu.Size = new System.Drawing.Size(168, 22);
             this.hexifyAuthInfoContextMenu.Text = "Hexify Auth Info";
             this.hexifyAuthInfoContextMenu.Click += new System.EventHandler(this.HexifyAuthInfoContextMenu_Click);
             // 
@@ -1047,6 +1051,22 @@
             this.closeContextMenu.Size = new System.Drawing.Size(116, 22);
             this.closeContextMenu.Text = "Close";
             this.closeContextMenu.Click += new System.EventHandler(this.CloseContextMenu_Click);
+            // 
+            // pythonCallToolStrip
+            // 
+            this.pythonCallToolStrip.Image = ((System.Drawing.Image)(resources.GetObject("pythonCallToolStrip.Image")));
+            this.pythonCallToolStrip.Name = "pythonCallToolStrip";
+            this.pythonCallToolStrip.Size = new System.Drawing.Size(168, 22);
+            this.pythonCallToolStrip.Text = "Python Call Script";
+            this.pythonCallToolStrip.Click += new System.EventHandler(this.PythonCallToolStrip_Click);
+            // 
+            // pythonCallContextMenu
+            // 
+            this.pythonCallContextMenu.Image = ((System.Drawing.Image)(resources.GetObject("pythonCallContextMenu.Image")));
+            this.pythonCallContextMenu.Name = "pythonCallContextMenu";
+            this.pythonCallContextMenu.Size = new System.Drawing.Size(168, 22);
+            this.pythonCallContextMenu.Text = "Python Call Script";
+            this.pythonCallContextMenu.Click += new System.EventHandler(this.PythonCallContextMenu_Click);
             // 
             // Make_FSELF_GUI
             // 
@@ -1185,6 +1205,8 @@
         private System.Windows.Forms.ToolStripMenuItem showaiContextMenu;
         private System.Windows.Forms.ToolStripMenuItem closeContextMenu;
         private System.Windows.Forms.GroupBox groupInfo;
+        private System.Windows.Forms.ToolStripMenuItem pythonCallToolStrip;
+        private System.Windows.Forms.ToolStripMenuItem pythonCallContextMenu;
     }
 }
 
