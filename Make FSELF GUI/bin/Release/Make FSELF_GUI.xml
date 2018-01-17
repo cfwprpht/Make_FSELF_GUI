@@ -1,0 +1,3508 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Make FSELF_GUI</name>
+    </assembly>
+    <members>
+        <member name="T:Make_FSELF_GUI.AppEventArgs">
+            <summary>
+            Application Event Arguments.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF_GUI.AppEventArgs.Message">
+            <summary>
+            A string Message.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF_GUI.AppEventArgs.DataPresent">
+            <summary>
+            Determine that Data is Present or not.
+            </summary>
+        </member>
+        <member name="M:Make_FSELF_GUI.AppEventArgs.#ctor(System.String)">
+            <summary>
+            Application Event Arguments Instance Initializer.
+            </summary>
+            <param name="Message">The ApplicationEvent Message.</param>
+        </member>
+        <member name="M:Make_FSELF_GUI.AppEventArgs.#ctor(System.Boolean)">
+            <summary>
+            Application Event Arguments Instance Initializer.
+            </summary>
+            <param name="DataPresent">The ApplicationEvent boolian.</param>
+        </member>
+        <member name="T:Make_FSELF_GUI.SwissKnifeEventArgs">
+            <summary>
+            Application Event Arguments.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF_GUI.SwissKnifeEventArgs.Count">
+            <summary>
+            A count.
+            </summary>
+        </member>
+        <member name="M:Make_FSELF_GUI.SwissKnifeEventArgs.#ctor(System.Int64)">
+            <summary>
+            Instance initializer.
+            </summary>
+            <param name="count">A integer count.</param>
+        </member>
+        <member name="T:Make_FSELF_GUI.ExceptionEventArgs">
+            <summary>
+            Exception Event Arguments.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF_GUI.ExceptionEventArgs.Message">
+            <summary>
+            The Exception Message.
+            </summary>
+        </member>
+        <member name="M:Make_FSELF_GUI.ExceptionEventArgs.#ctor(System.String)">
+            <summary>
+            Exception Event Arguments Instance Initializer.
+            </summary>
+            <param name="message">The Exception Message.</param>
+        </member>
+        <member name="T:Make_FSELF_GUI.Properties.Resources">
+            <summary>
+              Eine stark typisierte Ressourcenklasse zum Suchen von lokalisierten Zeichenfolgen usw.
+            </summary>
+        </member>
+        <member name="P:Make_FSELF_GUI.Properties.Resources.ResourceManager">
+            <summary>
+              Gibt die zwischengespeicherte ResourceManager-Instanz zurück, die von dieser Klasse verwendet wird.
+            </summary>
+        </member>
+        <member name="P:Make_FSELF_GUI.Properties.Resources.Culture">
+            <summary>
+              Überschreibt die CurrentUICulture-Eigenschaft des aktuellen Threads für alle
+              Ressourcenzuordnungen, die diese stark typisierte Ressourcenklasse verwenden.
+            </summary>
+        </member>
+        <member name="P:Make_FSELF_GUI.Properties.Resources.Alert">
+            <summary>
+              Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Make_FSELF_GUI.Properties.Resources.AlertSound">
+            <summary>
+              Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
+            </summary>
+        </member>
+        <member name="P:Make_FSELF_GUI.Properties.Resources.DbgClamp">
+            <summary>
+              Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Make_FSELF_GUI.Properties.Resources.DebugSound">
+            <summary>
+              Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
+            </summary>
+        </member>
+        <member name="P:Make_FSELF_GUI.Properties.Resources.Empty">
+            <summary>
+              Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
+            </summary>
+        </member>
+        <member name="P:Make_FSELF_GUI.Properties.Resources.Error">
+            <summary>
+              Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Make_FSELF_GUI.Properties.Resources.ErrorSound">
+            <summary>
+              Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
+            </summary>
+        </member>
+        <member name="P:Make_FSELF_GUI.Properties.Resources.File">
+            <summary>
+              Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
+            </summary>
+        </member>
+        <member name="P:Make_FSELF_GUI.Properties.Resources.Folder">
+            <summary>
+              Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
+            </summary>
+        </member>
+        <member name="P:Make_FSELF_GUI.Properties.Resources.Folder_Open">
+            <summary>
+              Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
+            </summary>
+        </member>
+        <member name="P:Make_FSELF_GUI.Properties.Resources.Info">
+            <summary>
+              Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Make_FSELF_GUI.Properties.Resources.InfoSound">
+            <summary>
+              Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
+            </summary>
+        </member>
+        <member name="P:Make_FSELF_GUI.Properties.Resources.Question">
+            <summary>
+              Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Make_FSELF_GUI.Properties.Resources.QuestionSound">
+            <summary>
+              Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
+            </summary>
+        </member>
+        <member name="T:Make_FSELF.Make_FSELF_GUI">
+            <summary>
+            A Grafical User Interface for flat_z 'make_fself.py' script.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.Make_FSELF_GUI.make_fself">
+            <summary>
+            Path to make_fself.py script from flat_z.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.Make_FSELF_GUI.authInfo">
+            <summary>
+            Path to the Authentication DataBase file.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.Make_FSELF_GUI.usePath">
+            <summary>
+            The path to use for opening a path.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.Make_FSELF_GUI.dbPath">
+            <summary>
+            The path to use for opening the database file.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.Make_FSELF_GUI.selectedFile">
+            <summary>
+            The selected File of the TreeView.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.Make_FSELF_GUI.tree">
+            <summary>
+            A Boolian to indicate which view is visible.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.Make_FSELF_GUI.batchCounter">
+            <summary>
+            A counter for the batch process to determine how much elfs would be successfully converted.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.Make_FSELF_GUI.errorString">
+            <summary>
+            Stores the output of make_fself.py script.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.Make_FSELF_GUI.Fws">
+            <summary>
+            Stores the fws from the authInfo database.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.Make_FSELF_GUI.Apps">
+            <summary>
+            Stores the Names of all the apps from the authInfo database.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.Make_FSELF_GUI.Auths">
+            <summary>
+            Strores all the authentication infos from the db.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.Make_FSELF_GUI.selectedNode">
+            <summary>
+            Stores the selected node.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.Make_FSELF_GUI.clipboard">
+            <summary>
+            A ClipboardWatcehr Instance to check for DataChanged.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.Make_FSELF_GUI.ignore">
+            <summary>
+            Determine StringComparison level.
+            </summary>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.#ctor">
+            <summary>
+            GUI Entry Point
+            </summary>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.Make_FSELF_GUI_Load(System.Object,System.EventArgs)">
+            <summary>
+            On Load of Form do.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.GuiAdvanced">
+            <summary>
+            Draw GUI in advanced mode.
+            </summary>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.GuiNormal">
+            <summary>
+            Draw GUI in normal mode.
+            </summary>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.TreeView">
+            <summary>
+            Change the File Window to TreeView.
+            </summary>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.BatchView">
+            <summary>
+            Change the File Window to Batch View.
+            </summary>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.GetFiles(System.String)">
+            <summary>
+            Gets all elf and bin files, including sub dirs, from the overloaded path and returns them.
+            </summary>
+            <param name="path">The path to look up.</param>
+            <returns>All founded files and subdirs.</returns>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.ResetHexAllignStrip">
+            <summary>
+            Reset the Hex Allign Tool Strip Menu Item.
+            </summary>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.ResetByteAllignStrip">
+            <summary>
+            Reset the Byte Allign Tool Strip Menu Item.
+            </summary>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.GetByteAllign">
+            <summary>
+            Get the User Choosen Byte Allign.
+            </summary>
+            <returns>The User Choosen Byte Allign.</returns>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.GetHexAllign">
+            <summary>
+            Get the User Choosen Hex Allign.
+            </summary>
+            <returns>The User Choosen Hex Allign.</returns>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.BuildAuthInfo(System.String[])">
+            <summary>
+            Dehexify the Auth Info.
+            </summary>
+            <param name="source">The source stirng to use.</param>
+            <returns>The formated string.</returns>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.Clipboard_ContentPresent(System.Object,Make_FSELF_GUI.AppEventArgs)">
+            <summary>
+            On Clipboard ContentChanged do.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.Make_FSELF_GUI_DragEnter(System.Object,System.Windows.Forms.DragEventArgs)">
+            <summary>
+            On Drag Enter do.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.Make_FSELF_GUI_DragDrop(System.Object,System.Windows.Forms.DragEventArgs)">
+            <summary>
+            On Drag Drop do.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.TreeView_AfterSelect(System.Object,System.Windows.Forms.TreeViewEventArgs)">
+            <summary>
+            After a TreeView Node selection do.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.TreeView_AfterExpand(System.Object,System.Windows.Forms.TreeViewEventArgs)">
+            <summary>
+            After a TreeView Node Expand do.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.TreeView_AfterCollapse(System.Object,System.Windows.Forms.TreeViewEventArgs)">
+            <summary>
+            After a TreeView Node Collapse do.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.RtbAuthInfo_KeyPress(System.Object,System.Windows.Forms.KeyPressEventArgs)">
+            <summary>
+            On RichTextBox KeyBoard Key Press do.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.RtbBatch_KeyPress(System.Object,System.Windows.Forms.KeyPressEventArgs)">
+            <summary>
+            On RichTextBox Batch View KeyBoard Key Press do.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.RtbAuthInfo_TextChanged(System.Object,System.EventArgs)">
+            <summary>
+            On RichTextBox Text Changed do.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.RrtbAuthInfo_SelectionChanged(System.Object,System.EventArgs)">
+            <summary>
+            On richTextBox AuthInfo selcetion changed do.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.ComboFW_SelectedIndexChanged(System.Object,System.EventArgs)">
+            <summary>
+            On comboBox FW SelectedIndex changed do..
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.ComboApp_SelectedIndexChanged(System.Object,System.EventArgs)">
+            <summary>
+            On comboBox App SelectedIndex changed do.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.MFSELF_OutputHandler(System.Object,System.Diagnostics.DataReceivedEventArgs)">
+            <summary>
+            Output Event Handler for the make_fself.py Process.
+            </summary>
+            <param name="sendingProcess">The Process which triggered this Event.</param>
+            <param name="outLine">The Received Data Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.MFSELF_ErrorHandler(System.Object,System.Diagnostics.DataReceivedEventArgs)">
+            <summary>
+            Error Event Handler for the make_fself.py Process.
+            </summary>
+            <param name="sendingProcess">The Process which triggered this Event.</param>
+            <param name="outLine">The Received Data Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.OpenFileToolStrip_Click(System.Object,System.EventArgs)">
+            <summary>
+            On Menu Strip Open File click.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.OpenFolderToolStrip_Click(System.Object,System.EventArgs)">
+            <summary>
+            On Menu Strip Open Folder click.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.CloseToolStrip_Click(System.Object,System.EventArgs)">
+            <summary>
+            On Menu Strip Close Click.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>     
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.BatchNormalToolStrip_Click(System.Object,System.EventArgs)">
+            <summary>
+            On Menu Strip Normal > Batch click.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.BatchAdvancedToolStrip_Click(System.Object,System.EventArgs)">
+            <summary>
+            On Menu Strip Advanced > Batch click.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.NormalNormalToolStrip_Click(System.Object,System.EventArgs)">
+            <summary>
+            On Menu Strip Normal > Normal click.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.NormalAdvancedToolStrip_Click(System.Object,System.EventArgs)">
+            <summary>
+            On Menu Strip Advanced > Normal click.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.SetMFSELFToolStrip_Click(System.Object,System.EventArgs)">
+            <summary>
+            Set a path to make_fself.py script.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.ShowMFSELFToolStrip_Click(System.Object,System.EventArgs)">
+            <summary>
+            Show saved path to the make_fself.py script.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.SetAuthInfoToolStrip_Click(System.Object,System.EventArgs)">
+            <summary>
+            Set a path to the authinfo database.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.ShowAuthInfoToolStrip_Click(System.Object,System.EventArgs)">
+            <summary>
+            Show saved path to the authinfo database.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.X4ToolStrip_Click(System.Object,System.EventArgs)">
+            <summary>
+            On Tool Strip Menu Hex x4 click do.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param> 
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.X8ToolStrip_Click(System.Object,System.EventArgs)">
+            <summary>
+            On Tool Strip Menu Hex x8 click do.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.X16ToolStrip_Click(System.Object,System.EventArgs)">
+            <summary>
+            On Tool Strip Menu Hex x16 click do.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.Byte1ToolStrip_Click(System.Object,System.EventArgs)">
+            <summary>
+            On Tool Strip Menu Byte 1 click do.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.Byte2ToolStrip_Click(System.Object,System.EventArgs)">
+            <summary>
+            On Tool Strip Menu Byte 2 click do.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.Byte4ToolStrip_Click(System.Object,System.EventArgs)">
+            <summary>
+            On Tool Strip Menu Byte 4 click do.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.Byte8ToolStrip_Click(System.Object,System.EventArgs)">
+            <summary>
+            On Tool Strip Menu Byte 8 click do.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.Byte16ToolStrip_Click(System.Object,System.EventArgs)">
+            <summary>
+            On Tool Strip Menu Byte 16 click do.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.HexifyAuthInfoToolStrip_Click(System.Object,System.EventArgs)">
+            <summary>
+            On ToolStrip Hexify Auth Info click do.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.AboutToolStrip_Click(System.Object,System.EventArgs)">
+            <summary>
+            On Menu Strip About Click do.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>     
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.FolderContextMenu_Click(System.Object,System.EventArgs)">
+            <summary>
+            On Context Menu Open Folder click do.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.FileContextMenu_Click(System.Object,System.EventArgs)">
+            <summary>
+            On Context Menu Open File click do.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.NormalNContextMenu_Click(System.Object,System.EventArgs)">
+            <summary>
+            On Context Menu Modus Normal Normal click do.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.BatchNContextMenu_Click(System.Object,System.EventArgs)">
+            <summary>
+            On Context Menu Modus Normal Batch click do.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.NormalAContextMenu_Click(System.Object,System.EventArgs)">
+            <summary>
+            On Context Menu Modus Advanced Normal click do.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.BatchAContextMenu_Click(System.Object,System.EventArgs)">
+            <summary>
+            On Context Menu Modus Advanced Batch click do.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.SetmfselfContextMenu_Click(System.Object,System.EventArgs)">
+            <summary>
+            On Context Menu Set make_fself.py click do.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.ShowmfselfContextMenu_Click(System.Object,System.EventArgs)">
+            <summary>
+            On Context Menu Show make_fself.py click do.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.SetaiContextMenu_Click(System.Object,System.EventArgs)">
+            <summary>
+            On Context Menu Set authinfo.txt click do.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.ShowaiContextMenu_Click(System.Object,System.EventArgs)">
+            <summary>
+            On Context Menu Show authinfo.txt click do.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.B1ContextMenu_Click(System.Object,System.EventArgs)">
+            <summary>
+            On Context Menu Byte Allign Byte 1 click do.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.B2ContextMenu_Click(System.Object,System.EventArgs)">
+            <summary>
+            On Context Menu Byte Allign Byte 2 click do.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.B4ContextMenu_Click(System.Object,System.EventArgs)">
+            <summary>
+            On Context Menu Byte Allign Byte 4 click do.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.B8ContextMenu_Click(System.Object,System.EventArgs)">
+            <summary>
+            On Context Menu Byte Allign Byte 8 click do.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.B16ContextMenu_Click(System.Object,System.EventArgs)">
+            <summary>
+            On Context Menu Byte Allign Byte 16 click do.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.X4ContextMenu_Click(System.Object,System.EventArgs)">
+            <summary>
+            On Context Menu Hex Allign Hex 4 click do.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.X8ContextMenu_Click(System.Object,System.EventArgs)">
+            <summary>
+            On Context Menu Hex Allign Hex 8 click do.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.X16ContextMenu_Click(System.Object,System.EventArgs)">
+            <summary>
+            On Context Menu Hex Allign Hex 16 click do.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.HexifyAuthInfoContextMenu_Click(System.Object,System.EventArgs)">
+            <summary>
+            On Context Menu Hexify Authentication informations click do.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.AboutContextMenu_Click(System.Object,System.EventArgs)">
+            <summary>
+            On Context Menu About click do.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.CloseContextMenu_Click(System.Object,System.EventArgs)">
+            <summary>
+            On Context Menu Close click do.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.CopyToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            On ContextMenu Copy click do.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.PasteContextMenu_Click(System.Object,System.EventArgs)">
+            <summary>
+            On ContextMenu Paste click do.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.ClearContextMenu_Click(System.Object,System.EventArgs)">
+            <summary>
+            On ContextMenu Clear click do.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.Make_FSELF_GUI_FormClosing(System.Object,System.Windows.Forms.FormClosingEventArgs)">
+            <summary>
+            On Closing of Form.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.ButtonFSELF_Click(System.Object,System.EventArgs)">
+            <summary>
+            On Button Fake Sign ELF Click.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>     
+        </member>
+        <member name="F:Make_FSELF.Make_FSELF_GUI.components">
+            <summary>
+            Erforderliche Designervariable.
+            </summary>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.Dispose(System.Boolean)">
+            <summary>
+            Verwendete Ressourcen bereinigen.
+            </summary>
+            <param name="disposing">True, wenn verwaltete Ressourcen gelöscht werden sollen; andernfalls False.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.InitializeComponent">
+            <summary>
+            Erforderliche Methode für die Designerunterstützung.
+            Der Inhalt der Methode darf nicht mit dem Code-Editor geändert werden.
+            </summary>
+        </member>
+        <member name="M:Make_FSELF.Program.Main">
+            <summary>
+            Der Haupteinstiegspunkt für die Anwendung.
+            </summary>
+        </member>
+        <member name="T:Make_FSELF.CursorPosition">
+            <summary>
+            Enumuration for the CursorPosition.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.CursorPosition.None">
+            <summary>
+            No Cursor Position.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.CursorPosition.Left">
+            <summary>
+            Left Cursor Position.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.CursorPosition.Right">
+            <summary>
+            Right Cursor Position.
+            </summary>
+        </member>
+        <member name="T:Make_FSELF.ButtonPosition">
+            <summary>
+            Enumuration for the Button Position.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.ButtonPosition.None">
+            <summary>
+            No Button Position.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.ButtonPosition.Left">
+            <summary>
+            Left Button Position.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.ButtonPosition.Center">
+            <summary>
+            Centered Button Position.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.ButtonPosition.Right">
+            <summary>
+            Right Button Position.
+            </summary>
+        </member>
+        <member name="T:Make_FSELF.Buttons">
+            <summary>
+            Enumuration for Yes No Cancel button.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.Buttons.Ok">
+            <summary>
+            OK Button.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.Buttons.Yes">
+            <summary>
+            Yes Button.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.Buttons.YesNo">
+            <summary>
+            Yes and No Buttons.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.Buttons.YesNoCancel">
+            <summary>
+            Yes, No and Chancel Buttons.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.Buttons.OkNo">
+            <summary>
+            Ok and No Buttons.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.Buttons.OkNoCancel">
+            <summary>
+            Ok, Bo and Chancel Buttons.
+            </summary>
+        </member>
+        <member name="T:Make_FSELF.HexAllign">
+            <summary>
+            Enumuration for Hex Alligning.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.HexAllign.x4">
+            <summary>
+            Allign Hex to 4 byte blocks.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.HexAllign.x8">
+            <summary>
+            Allign Hex to 8 byte blocks.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.HexAllign.x16">
+            <summary>
+            Allign Hex to 16 byte blocks.
+            </summary>
+        </member>
+        <member name="T:Make_FSELF.ByteAllign">
+            <summary>
+            Enumuration for Byte Alligning.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.ByteAllign.b1">
+            <summary>
+            Alling a single byte to Hex.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.ByteAllign.b2">
+            <summary>
+            Allign two bytes to Hex.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.ByteAllign.b4">
+            <summary>
+            Allign four bytes to Hex.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.ByteAllign.b8">
+            <summary>
+            Allign eight bytes to Hex.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.ByteAllign.b16">
+            <summary>
+            Allign sixteen bytes to Hex.
+            </summary>
+        </member>
+        <member name="T:Make_FSELF.ArrayExtension">
+            <summary>
+            Array Extension.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.ArrayExtension.a">
+            <summary>
+            Internal used for indexer resolving.
+            </summary>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.Resize``1(``0[],System.Int32)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source"></param>
+            <param name="num"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.Clear``1(``0[])">
+            <summary>
+            Clear a Array.
+            </summary>
+            <typeparam name="T">The Type of the array to use.</typeparam>
+            <param name="source">The source Array.</param>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.Clear``1(``0[][])">
+            <summary>
+            Clear a Array of Arrays.
+            </summary>
+            <typeparam name="T">The Type of the array to use.</typeparam>
+            <param name="source">The source Array.</param>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.Contains``1(``0[],``0)">
+            <summary>
+            Checks a Array for existens of a value.
+            </summary>
+            <typeparam name="T">The Type of the array to use and the value to add.</typeparam>
+            <param name="source">The source Array.</param>
+            <param name="value">The value to check for existens.</param>
+            <returns>True if the source Array contains the value to check for, else false.</returns>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.Contains``1(``0[],``0[])">
+            <summary>
+            Checks a Array for existens of a other Array.
+            </summary>
+            <typeparam name="T">The Type of the array to use and the value to add.</typeparam>
+            <param name="source">The source Array.</param>
+            <param name="range">The Array to check for existens.</param>
+            <returns>True if the source Array contains the Array to check for, else false.</returns>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.Combine``1(``0[],``0[][])">
+            <summary>
+            Combine one or more arrays with each other.
+            </summary>
+            <typeparam name="T">The Type of the array to use and the value to add.</typeparam>
+            <param name="source">The source array to which we shall combine to it.</param>
+            <param name="arrays">The arrays which shall be combine with each other.</param>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.CombineOnTop``1(``0[],``0[][])">
+            <summary>
+            Combine one or more arrays with each other on top of the source array.
+            </summary>
+            <typeparam name="T">The Type of the array to use and the value to add.</typeparam>
+            <param name="source">The source array to which we shall combine to it.</param>
+            <param name="arrays">The arrays which shall be combine with each other.</param>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.Equals``1(``0[],``0[],System.Boolean)">
+            <summary>
+            Compares a Array against a other one.
+            </summary>
+            <typeparam name="T">The Type of the array to use and the value to add.</typeparam>
+            <param name="source">The source Array.</param>
+            <param name="range">The Array to check for.</param>
+            <param name="sameLength">Determine if both arrays shall be of same length.</param>
+            <returns>True if the source array contains the array to check for (optional length test), else false.</returns>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.IndexOf``1(``0[],``0)">
+            <summary>
+            Gets the index of a value within a array.
+            </summary>
+            <typeparam name="T">The Type of the array to use and the value to search for.</typeparam>
+            <param name="source">The source Array.</param>
+            <param name="value">The value to check for existens.</param>
+            <returns>The index of the value within the array if found, else -1.</returns>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.IndexOf``1(``0[],``0[])">
+            <summary>
+            Gets the start index of a array within a array.
+            </summary>
+            <typeparam name="T">The Type of the array to use and the value to add.</typeparam>
+            <param name="source">The source Array.</param>
+            <param name="toCheck">The Array to check for the start index.</param>
+            <returns>The start index of the array to check within the source array if found, else -1.</returns>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.IndexOf``1(``0[][],``0[])">
+            <summary>
+            Gets the indexer of a array within a array of arrays.
+            </summary>
+            <typeparam name="T">The Type of the array to use and the value to add.</typeparam>
+            <param name="source">The source Array.</param>
+            <param name="toCheck">The Array to check for the start index.</param>
+            <returns>The start index of the array to check within the source array if found, else -1.</returns>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.IndexOfLast``1(``0[],``0)">
+            <summary>
+            Gets the index of the last matching value within a array.
+            </summary>
+            <typeparam name="T">The Type of the array to use and the value to search for.</typeparam>
+            <param name="source">The source Array.</param>
+            <param name="value">The value to check for existens.</param>
+            <returns>The index of the value within the array if found, else -1.</returns>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.IndexOfAll``1(``0[],``0)">
+            <summary>
+            Gets the index of all matching values within a array.
+            </summary>
+            <typeparam name="T">The Type of the array to use and the value to search for.</typeparam>
+            <param name="source">The source Array.</param>
+            <param name="value">The value to check for existens.</param>
+            <returns>The index of the value within the array if found, else -1.</returns>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.Add``1(``0[],``0)">
+            <summary>
+            Add a value to a Array.
+            </summary>
+            <typeparam name="T">The Type of the array to use and the value to add.</typeparam>
+            <param name="source">The source Array.</param>
+            <param name="value">The value to add.</param>
+            <returns>The new Array with the added value.</returns>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.Add``1(``0[],``0[])">
+            <summary>
+            Add a Range of values to a Array.
+            </summary>
+            <typeparam name="T">The Type of the array to use and the value to add.</typeparam>
+            <param name="source">The source Array.</param>
+            <param name="range">The Array to add.</param>
+            <returns>The new Array with the added value.</returns>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.Add``1(``0[][],``0[])">
+            <summary>
+            Add a Range of values to a Array.
+            </summary>
+            <typeparam name="T">The Type of the array to use and the value to add.</typeparam>
+            <param name="source">The source Array.</param>
+            <param name="range">The Array to add.</param>
+            <returns>The new Array with the added value.</returns>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.AddNew``1(``0[],``0)">
+            <summary>
+            Add a value to a array but only if not already existent.
+            </summary>
+            <typeparam name="T">The Type of the array to use and the value to add.</typeparam>
+            <param name="source">The source Array.</param>
+            <param name="value">The value to add.</param>
+            <returns>The new Array with the added value.</returns>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.AddNew``1(``0[],``0[])">
+            <summary>
+            Add a Range of values to a Array but only if not already existent.
+            </summary>
+            <typeparam name="T">The Type of the array to use and the value to add.</typeparam>
+            <param name="source">The source Array.</param>
+            <param name="range">The Array to add.</param>
+            <returns>The new Array with the added value.</returns>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.AddNew``1(``0[][],``0[])">
+            <summary>
+            Add a Range of values to a Array but only if not already existent.
+            </summary>
+            <typeparam name="T">The Type of the array to use and the value to add.</typeparam>
+            <param name="source">The source Array.</param>
+            <param name="range">The Array to add.</param>
+            <returns>The new Array with the added value.</returns>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.AddOnTop``1(``0[],``0)">
+            <summary>
+            Add a value on Top of a Array.
+            </summary>
+            <typeparam name="T">The Type of the array to use and the value to add.</typeparam>
+            <param name="source">The source Array.</param>
+            <param name="value">The value to add.</param>
+            <returns>The new Array with the added value.</returns>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.AddOnTop``1(``0[],``0[])">
+            <summary>
+            Add a range of values on top of a Array.
+            </summary>
+            <typeparam name="T">The Type of the array to use and the value to add.</typeparam>
+            <param name="source">The source Array.</param>
+            <param name="range">The Array to add.</param>
+            <returns>The new Array with the added value.</returns>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.AddOnTop``1(``0[][],``0[])">
+            <summary>
+            Add a range of values on top of a Array of Arrays.
+            </summary>
+            <typeparam name="T">The Type of the array to use and the value to add.</typeparam>
+            <param name="source">The source Array of Arrays.</param>
+            <param name="range">The Array to add.</param>
+            <returns>The new Array with the added value.</returns>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.AddNewOnTop``1(``0[],``0)">
+            <summary>
+            Add a value on Top of a Array but only if not already existent.
+            </summary>
+            <typeparam name="T">The Type of the array to use and the value to add.</typeparam>
+            <param name="source">The source Array.</param>
+            <param name="value">The value to add.</param>
+            <returns>The new Array with the added value.</returns>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.AddNewOnTop``1(``0[],``0[])">
+            <summary>
+            Add a range of values on Top of a Array but only if not already existent.
+            </summary>
+            <typeparam name="T">The Type of the array to use and the value to add.</typeparam>
+            <param name="source">The source Array.</param>
+            <param name="range">The range of values to add.</param>
+            
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.AddNewOnTop``1(``0[][],``0[])">
+            <summary>
+            Add a range of values on Top of a Array of Arrays but only if not already existent.
+            </summary>
+            <typeparam name="T">The Type of the array to use and the value to add.</typeparam>
+            <param name="source">The source Array.</param>
+            <param name="range">The range of values to add.</param>v
+            <returns>The new Array with the added value.</returns>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.Insert``1(``0[],System.Int32,``0)">
+            <summary>
+            Insert a value into a Array.
+            </summary>
+            <typeparam name="T">The Type of the array to use and the value to add.</typeparam>
+            <param name="source">The source Array.</param>
+            <param name="index">The index on which we shall insert.</param>
+            <param name="value">The value to add.</param>
+            <returns>The new Array with the added value.</returns>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.Insert``1(``0[],System.Int32,``0[])">
+            <summary>
+            Insert a range of values into a Array.
+            </summary>
+            <typeparam name="T">The Type of the array to use and the value to add.</typeparam>
+            <param name="source">The source Array.</param>
+            <param name="index">The index on which we shall insert.</param>
+            <param name="range">The range to add.</param>
+            <returns>The new Array with the added value.</returns>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.Insert``1(``0[][],System.Int32,``0[])">
+            <summary>
+            Insert a range of values into a Array of Arrays.
+            </summary>
+            <typeparam name="T">The Type of the array to use and the value to add.</typeparam>
+            <param name="source">The source Array.</param>
+            <param name="index">The index on which we shall insert.</param>
+            <param name="range">The range to add.</param>
+            <returns>The new Array with the added value.</returns>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.Insert``1(``0[],``0,``0)">
+            <summary>
+            Insert a value into a Array.
+            </summary>
+            <typeparam name="T">The Type of the array to use and the value to add.</typeparam>
+            <param name="source">The source Array.</param>
+            <param name="index">The value on which place we shall insert.</param>
+            <param name="value">The value to add.</param>
+            <returns>The new Array with the added value.</returns>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.Insert``1(``0[],``0,``0[])">
+            <summary>
+            Insert a range of values into a Array.
+            </summary>
+            <typeparam name="T">The Type of the array to use and the value to add.</typeparam>
+            <param name="source">The source Array.</param>
+            <param name="index">The value on which place we shall insert.</param>
+            <param name="range">The values to add.</param>
+            <returns>The new Array with the added value.</returns>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.Insert``1(``0[][],``0[],``0[])">
+            <summary>
+            Insert a range of values into a Array of arrays.
+            </summary>
+            <typeparam name="T">The Type of the array to use and the value to add.</typeparam>
+            <param name="source">The source Array.</param>
+            <param name="index">The value on which place we shall insert.</param>
+            <param name="range">The values to add.</param>
+            <returns>The new Array with the added value.</returns>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.Replace``1(``0[],``0,``0)">
+            <summary>
+            Replace a value within a Array.
+            </summary>
+            <typeparam name="T">The Type of the array to use and the value to add.</typeparam>
+            <param name="source">The source Array.</param>
+            <param name="toChange">The value to replace.</param>
+            <param name="value">The value to add.</param>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.Replace``1(``0[],``0[],``0)">
+            <summary>
+            Replace a range of values within a Array.
+            </summary>
+            <typeparam name="T">The Type of the array to use and the value to add.</typeparam>
+            <param name="source">The source Array.</param>
+            <param name="toChange">The values to replace.</param>
+            <param name="value">The value to replace with.</param>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.ReplaceMulti``1(``0[],``0[],``0[])">
+            <summary>
+            Replace multiple values within a Array. Replaces matching value 1 from toChange Array with the value 1 from values Array within the source Array.
+            If the Array toChange is not in same size of the Array values, the function will throw a format exception and simple return.
+            </summary>
+            <typeparam name="T">The Type of the array to use and the value to add.</typeparam>
+            <param name="source">The source Array.</param>
+            <param name="toChange">The values to replace.</param>
+            <param name="values">The values to replace with.</param>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.Replace``1(``0[],``0[],``0[])">
+            <summary>
+            Replace a array with another one, within a array.
+            </summary>
+            <typeparam name="T">The Type of the array to use and the value to add.</typeparam>
+            <param name="source">The source Array.</param>
+            <param name="toChange">The array to replace.</param>
+            <param name="patch">Thearray to patch.</param>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.Replace``1(``0[],System.Int32,``0[])">
+            <summary>
+            Replace a array within a array based on a indexer.
+            </summary>
+            <typeparam name="T">The Type of the array to use and the value to add.</typeparam>
+            <param name="source">The source Array.</param>
+            <param name="indexer">The offset within the array from where we shall start to patch.</param>
+            <param name="patch">The array to patch.</param>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.Replace``1(``0[][],``0[],``0[])">
+            <summary>
+            Replace a range of values within a Array of arrays.
+            </summary>
+            <typeparam name="T">The Type of the array to use and the value to add.</typeparam>
+            <param name="source">The source Array.</param>
+            <param name="toChange">The values to replace.</param>
+            <param name="value">The value to replace with.</param>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.Replace``1(``0[][],``0[][],``0[])">
+            <summary>
+            Replace a range of arrays within a Array of arrays.
+            </summary>
+            <typeparam name="T">The Type of the array to use and the value to add.</typeparam>
+            <param name="source">The source Array.</param>
+            <param name="toChange">The values to replace.</param>
+            <param name="value">The values to replace with.</param>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.ReplaceAll``1(``0[],``0,``0)">
+            <summary>
+            Replace all matching values within a Array.
+            </summary>
+            <typeparam name="T">The Type of the array to use and the value to add.</typeparam>
+            <param name="source">The source Array.</param>
+            <param name="toChange">The value to replace.</param>
+            <param name="value">The value to add.</param>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.ReplaceAll``1(``0[],``0[],``0)">
+            <summary>
+            Replace all matching values from a range within a Array.
+            </summary>
+            <typeparam name="T">The Type of the array to use and the value to add.</typeparam>
+            <param name="source">The source Array.</param>
+            <param name="toChange">The values to replace.</param>
+            <param name="value">The value to replace with.</param>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.ReplaceAll``1(``0[][],``0[][],``0[])">
+            <summary>
+            Replace all matching arrays from a range off within a Array of arrays.
+            </summary>
+            <typeparam name="T">The Type of the array to use and the value to add.</typeparam>
+            <param name="source">The source Array.</param>
+            <param name="toChange">The values to replace.</param>
+            <param name="value">The values to replace with.</param>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.Remove``1(``0[],``0)">
+            <summary>
+            Remove a value from the Array.
+            </summary>
+            <typeparam name="T">The Type of the array to use and the value to remove.</typeparam>
+            <param name="source">The source Array.</param>
+            <param name="value">The value to remove.</param>
+            /// <returns>The new Array with the added value.</returns>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.RemoveMulti``1(``0[],``0[])">
+            <summary>
+            Remove a range of values from the Array.
+            </summary>
+            <typeparam name="T">The Type of the array to use and the value to remove.</typeparam>
+            <param name="source">The source Array.</param>
+            <param name="range">The values to remove.</param>
+            /// <returns>The new Array with the added value.</returns>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.Remove``1(``0[],``0[])">
+            <summary>
+            Remove matching Bytes out of a byte Array.
+            </summary>
+            <param name="source">The source array to use.</param>
+            <param name="remove">The bytes to remove.</param>
+            /// <returns>The new Array with the added value.</returns>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.RemoveAll``1(``0[],``0[])">
+            <summary>
+            Remove all matching Bytes out of a byte Array.
+            </summary>
+            <param name="source">The source array to use.</param>
+            <param name="remove">The bytes to remove.</param>
+            /// <returns>The new Array with the added value.</returns>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.Remove``1(``0[],System.Int32)">
+            <summary>
+            Remove a value from a Array by index.
+            </summary>
+            <typeparam name="T">The Type of the array to use.</typeparam>
+            <param name="source">The source Array.</param>
+            <param name="index">The index of the entry to remove.</param>
+            /// <returns>The new Array with the added value.</returns>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.Remove``1(``0[],System.Int32,System.Int32)">
+            <summary>
+            Remove a range of values from a Array by index.
+            </summary>
+            <typeparam name="T">The Type of the array to use.</typeparam>
+            <param name="source">The source Array.</param>
+            <param name="index">The index of the entry from where to start to remove.</param>
+            <param name="count">The amount of entrys to remove.</param>
+            /// <returns>The new Array with the added value.</returns>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.Remove``1(``0[],System.Int32[])">
+            <summary>
+            Remove a range of values from a Array by indexers.
+            </summary>
+            <typeparam name="T">The Type of the array to use.</typeparam>
+            <param name="source">The source Array.</param>
+            <param name="indexers">The indexers of the entrys to remove.</param>
+            /// <returns>The new Array with the added value.</returns>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.Remove``1(``0[][],System.Int32)">
+            <summary>
+            Remove a array from a Array of arrays by index.
+            </summary>
+            <typeparam name="T">The Type of the array to use.</typeparam>
+            <param name="source">The source Array.</param>
+            <param name="index">The index of the entry to remove.</param>
+            /// <returns>The new Array with the added value.</returns>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.Remove``1(``0[][],System.Int32,System.Int32)">
+            <summary>
+            Remove a range of values from a Array of arrays by index.
+            </summary>
+            <typeparam name="T">The Type of the array to use.</typeparam>
+            <param name="source">The source Array.</param>
+            <param name="index">The index of the entry from where to start to remove.</param>
+            <param name="count">The amount of entrys to remove.</param>
+            /// <returns>The new Array with the added value.</returns>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.Remove``1(``0[][],System.Int32[])">
+            <summary>
+            Remove a range of values from a Array of arrays by indexers.
+            </summary>
+            <typeparam name="T">The Type of the array to use.</typeparam>
+            <param name="source">The source Array.</param>
+            <param name="indexers">The indexers of the entrys to remove.</param>
+            /// <returns>The new Array with the added value.</returns>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.Remove``1(``0[][],``0[])">
+            <summary>
+            Remove a array from the Array of arrays.
+            </summary>
+            <typeparam name="T">The Type of the array to use and the value to remove.</typeparam>
+            <param name="source">The source Array.</param>
+            <param name="range">The array to remove.</param>
+            /// <returns>The new Array with the added value.</returns>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.RemoveFirst``1(``0[])">
+            <summary>
+            Remove the first value from the Array.
+            </summary>
+            <typeparam name="T">The Type of the array to use.</typeparam>
+            <param name="source">The source Array.</param>
+            /// <returns>The new Array with the added value.</returns>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.RemoveFirst``1(``0[][])">
+            <summary>
+            Remove the first array from the Array of arrays.
+            </summary>
+            <typeparam name="T">The Type of the array to use.</typeparam>
+            <param name="source">The source Array.</param>
+            /// <returns>The new Array with the added value.</returns>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.RemoveFirst``1(``0[],``0)">
+            <summary>
+            Remove the first matching value from the Array.
+            </summary>
+            <typeparam name="T">The Type of the array to use.</typeparam>
+            <param name="source">The source Array.</param>
+            <param name="value">The value to remove from the array.</param>
+            /// <returns>The new Array with the added value.</returns>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.RemoveFirst``1(``0[][],``0[])">
+            <summary>
+            Remove the first matching array from the Array of arrays.
+            </summary>
+            <typeparam name="T">The Type of the array to use.</typeparam>
+            <param name="source">The source Array.</param>
+            <param name="value">The array to remove from the array of arrays.</param>
+            /// <returns>The new Array with the added value.</returns>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.RemoveLast``1(``0[])">
+            <summary>
+            Remove last value from the Array.
+            </summary>
+            <typeparam name="T">The Type of the array to use.</typeparam>
+            <param name="source">The source Array.</param>
+            /// <returns>The new Array with the added value.</returns>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.RemoveLast``1(``0[][])">
+            <summary>
+            Remove last array from the Array of arrays.
+            </summary>
+            <typeparam name="T">The Type of the array to use.</typeparam>
+            <param name="source">The source Array.</param>
+            /// <returns>The new Array with the added value.</returns>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.RemoveLast``1(``0[],``0)">
+            <summary>
+            Remove last matching value from the Array.
+            </summary>
+            <typeparam name="T">The Type of the array to use.</typeparam>
+            <param name="source">The source Array.</param>
+            <param name="value">The value to remove from the array.</param>
+            /// <returns>The new Array with the added value.</returns>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.RemoveLast``1(``0[][],``0[])">
+            <summary>
+            Remove last matching array from the Array of arrays.
+            </summary>
+            <typeparam name="T">The Type of the array to use.</typeparam>
+            <param name="source">The source Array.</param>
+            <param name="value">The array to remove from the array of arrays.</param>
+            /// <returns>The new Array with the added value.</returns>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.RemoveAll``1(``0[],``0)">
+            <summary>
+            Remove all matching values from the Array.
+            </summary>
+            <typeparam name="T">The Type of the array to use and the value to remove.</typeparam>
+            <param name="source">The source Array.</param>
+            <param name="value">The value to remove.</param>
+            /// <returns>The new Array with the added value.</returns>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.RemoveEmpty``1(``0[])">
+            <summary>
+            Remove all empty entrys from a Array.
+            </summary>
+            <typeparam name="T">The Type of the array to use and the value to remove.</typeparam>
+            <param name="source">The source Array to use.</param>
+        </member>
+        <member name="M:Make_FSELF.ArrayExtension.RemoveEmpty``1(``0[][])">
+            <summary>
+            Remove all empty arrays from a Array of Arrays.
+            </summary>
+            <typeparam name="T">The Type of the array to use and the value to remove.</typeparam>
+            <param name="source">The source Array to use.</param>
+        </member>
+        <member name="T:Make_FSELF.ControlExtension">
+            <summary>
+            A ControlHelper.
+            </summary>
+        </member>
+        <member name="M:Make_FSELF.ControlExtension.InvokeIfRequired(System.Windows.Forms.Control,System.Action)">
+            <summary>
+            Invoke a Control but only if required, else we run the action without it.
+            </summary>
+            <param name="control">The Control to invoke.</param>
+            <param name="action">The Action to run.</param>
+        </member>
+        <member name="T:Make_FSELF.TreeViewExtension">
+            <summary>
+            A TreeView Extension.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.TreeViewExtension.treeViewIcons">
+            <summary>
+            A ImageList of Icons for the ThreeView.
+            </summary>
+        </member>
+        <member name="P:Make_FSELF.TreeViewExtension.ImageList">
+            <summary>
+            Define and add Icons to our ImageList.
+            </summary>
+        </member>
+        <member name="M:Make_FSELF.TreeViewExtension.PopulateTreeViewIcons(System.Windows.Forms.TreeNode)">
+            <summary>
+            Populate the Icons for the TreeView.
+            </summary>
+            <param name="node"></param>
+        </member>
+        <member name="M:Make_FSELF.TreeViewExtension.GetNodeByName(System.Windows.Forms.TreeNodeCollection,System.String)">
+            <summary>
+            Search for a TreeNode by his Name.
+            </summary>
+            <param name="source">The source TreeNodeCollection to use.</param>
+            <param name="searchFor">The TreeNode.Name as string.</param>
+            <returns>The founded node, else null.</returns>
+        </member>
+        <member name="M:Make_FSELF.TreeViewExtension.GetAllNodeByName(System.Windows.Forms.TreeNodeCollection,System.String)">
+            <summary>
+            Search for all matching TreeNodes by his Name.
+            </summary>
+            <param name="source">The source TreeNodeCollection to use.</param>
+            <param name="searchFor">The TreeNode.Name as string.</param>
+            <returns>The founded nodes, else null.</returns>
+        </member>
+        <member name="M:Make_FSELF.TreeViewExtension.GetNodeByText(System.Windows.Forms.TreeNodeCollection,System.String)">
+            <summary>
+            Search for a TreeNode by his Text.
+            </summary>
+            <param name="source">The source TreeNodeCollection to use.</param>
+            <param name="searchFor">The TreeNode.Text as string.</param>
+            <returns>The founded node, else null.</returns>
+        </member>
+        <member name="M:Make_FSELF.TreeViewExtension.GetAllNodeByText(System.Windows.Forms.TreeNodeCollection,System.String)">
+            <summary>
+            Search for all TreeNodes by his Text.
+            </summary>
+            <param name="source">The source TreeNodeCollection to use.</param>
+            <param name="searchFor">The TreeNode.Text as string.</param>
+            <returns>The founded nodes, else null.</returns>
+        </member>
+        <member name="M:Make_FSELF.TreeViewExtension.GetNodeByFullPath(System.Windows.Forms.TreeNodeCollection,System.String)">
+            <summary>
+            Search for a TreeNode by his FullPath.
+            </summary>
+            <param name="source">The source TreeNodeCollection to use.</param>
+            <param name="searchFor">The TreeNode.FullPath as string.</param>
+            <returns>The founded node, else null.</returns>
+        </member>
+        <member name="M:Make_FSELF.TreeViewExtension.PopulateTreeView(System.Windows.Forms.TreeView,System.Windows.Forms.Control,System.String[],System.Char,System.String)">
+            <summary>
+            Populate a List of paths within a TreeView of a Control using Invoking if needed.
+            </summary>
+            <param name="source">The instance on which to use this extension.</param>
+            <param name="control">The Control where we shall populate into a treeView.</param>
+            <param name="paths">The paths to populate.</param>
+            <param name="separator">Path seperator.</param>
+            /// <param name="toSelect">The Node entry to select.</param>
+        </member>
+        <member name="M:Make_FSELF.TreeViewExtension.PopulateTreeViewDo(System.Windows.Forms.TreeView,System.String[],System.Char,System.String)">
+            <summary>
+            Populate a List of paths within a TreeView.
+            </summary>
+            <param name="source">The instance on which to use this extension.</param>
+            <param name="paths">The paths to populate.</param>
+            <param name="separator">Path seperator.</param>
+            <param name="toSelect">The Node entry to select.</param>
+        </member>
+        <member name="T:Make_FSELF.StringExtension">
+            <summary>
+            Some StringExtansion.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.StringExtension.ignoreCase">
+            <summary>
+            StringComparison to ignore Cases for our modded string extansions.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.StringExtension.hex">
+            <summary>
+            A string that represents a valid Hex Value.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.StringExtension.hex2">
+            <summary>
+            A string that represents a valid Hexifyed string.
+            </summary>
+        </member>
+        <member name="M:Make_FSELF.StringExtension.Contains(System.String,System.String,System.StringComparison)">
+            <summary>
+            Checks if a string do contain a specific string including StringCoparison option.
+            </summary>
+            <param name="source">The source string to check.</param>
+            <param name="toCheck">The string that shall be looked for.</param>
+            <param name="comparison">String Comparison options.</param>
+            <returns>True if the string to look for was found., else false.</returns>
+        </member>
+        <member name="M:Make_FSELF.StringExtension.Contain(System.String,System.String)">
+            <summary>
+            Checks if a string do contain a specific string including StringCoparison option. (Auto ignoreCase)
+            </summary>
+            <param name="source">The source string to check.</param>
+            <param name="toCheck">The string that shall be looked for.</param>
+            <returns>True if the string to look for was found., else false.</returns>
+        </member>
+        <member name="M:Make_FSELF.StringExtension.GetFilesNDirsRecursive(System.String,System.String)">
+            <summary>
+            Gets recursively all Files from the given path matching the search Pattern, including Sub Directories.
+            </summary>
+            <param name="source">The path to look up.</param>
+            <param name="searchPattern">A specifc character combination to search for.</param>
+            <returns>A string Array with all files including sub directories, pending the searchPattern, listed.</returns>
+        </member>
+        <member name="M:Make_FSELF.StringExtension.GetFilesNDirsRecursive(System.String)">
+            <summary>
+            Gets recursively all Files from the given path, including Sub Directories.
+            </summary>
+            <param name="source">The path to look up.</param>
+            <returns>A string Array with all files and sub directories listed.</returns>
+        </member>
+        <member name="M:Make_FSELF.StringExtension.FormatString(System.String,System.Object[])">
+            <summary>
+            Formats a string and replaces all the arguments from the params object array with the placeholders within the string.
+            </summary>
+            <param name="toFormat">The string to format.</param>
+            <param name="format">A params object array containing all the arguments to replace.</param>
+            <returns>The formated string.</returns>
+        </member>
+        <member name="M:Make_FSELF.StringExtension.GetName(System.String)">
+            <summary>
+            Trims the path out of a name. Name can be last folder in string or file.
+            </summary>
+            <param name="source">The path string to trim.</param>
+            <returns>The name without any back slashes or path in it.</returns>
+        </member>
+        <member name="M:Make_FSELF.StringExtension.GetPath(System.String)">
+            <summary>
+            Trim the name out of a path. Name can be last folder in string or file.
+            </summary>
+            <param name="source">The path string to trim.</param>
+            <returns>The path without the last folder or the file in the string.</returns>
+        </member>
+        <member name="M:Make_FSELF.StringExtension.IsFolder(System.String)">
+            <summary>
+            Checks if a string is of type file or folder.
+            </summary>
+            <param name="source">The source string to check.</param>
+            <returns>True if the string to check is a folder, else false.</returns>
+        </member>
+        <member name="M:Make_FSELF.StringExtension.IsHex(System.String)">
+            <summary>
+            Check if a input string is a valid Hex Value.
+            </summary>
+            <param name="value">The value to check for.</param>
+            <returns>True if the value contains only Hex values, else False.</returns>
+        </member>
+        <member name="M:Make_FSELF.StringExtension.IsHexifyed(System.String)">
+            <summary>
+            Check if a string is already Hexifyed.
+            </summary>
+            <param name="source">The source string to use.</param>
+            <returns>True if the string is already hexifyed.</returns>
+        </member>
+        <member name="M:Make_FSELF.StringExtension.IsHexifyed(System.String[])">
+            <summary>
+            Check if a string array is already Hexifyed.
+            </summary>
+            <param name="source">The source string array to use.</param>
+            <returns>True if the string array is already hexifyed.</returns>
+        </member>
+        <member name="M:Make_FSELF.StringExtension.Hexify(System.String,Make_FSELF.ByteAllign,Make_FSELF.HexAllign)">
+            <summary>
+            Hexify a sring.
+            </summary>
+            <param name="source">The source string to use.</param>
+            <param name="_byte">The Byte Allignment.</param>
+            <param name="_hex">The Hex Allignment.</param>
+            <returns>The Hexifyed string as Array.</returns>
+        </member>
+        <member name="M:Make_FSELF.StringExtension.Hexify(System.String[],Make_FSELF.ByteAllign,Make_FSELF.HexAllign)">
+            <summary>
+            Hexify a sring array.
+            </summary>
+            <param name="source">The source string array to use.</param>
+            <param name="_byte">The Byte Allignment.</param>
+            <param name="_hex">The Hex Allignment.</param>
+            <returns>The Hexifyed string array.</returns>
+        </member>
+        <member name="M:Make_FSELF.StringExtension.Dehexify(System.String[])">
+            <summary>
+            Dehexify a string.
+            </summary>
+            <param name="source">The source string array to use.</param>
+            <returns>The Dehexifyed strings as Array.</returns>
+        </member>
+        <member name="M:Make_FSELF.StringExtension.Dehexify(System.String)">
+            <summary>
+            Dehexify a string.
+            </summary>
+            <param name="source">The source string to use.</param>
+            <returns>The Dehexifyed string as Array.</returns>
+        </member>
+        <member name="M:Make_FSELF.StringExtension.ReadAllLines(System.String)">
+            <summary>
+            Read all lines from the file, pointed to in the string. Includes IO Exception Handling.
+            </summary>
+            <param name="source">The string that points to the file to read all lines from.</param>
+        </member>
+        <member name="M:Make_FSELF.StringExtension.Write(System.String,System.String,System.Object[])">
+            <summary>
+            Write a string to a file.
+            </summary>
+            <param name="destination">The file to write into.</param>
+            <param name="message">The message to write.</param>
+            <param name="args">The arguments that shall be swapped with the place holders.</param>
+        </member>
+        <member name="M:Make_FSELF.StringExtension.ToByte(System.String,System.Text.Encoding,System.Boolean)">
+            <summary>
+            Converts a string to a byte array.
+            </summary>
+            <param name="source">The string that shall be converted to a byte[].</param>
+            <param name="encoding">Determine a encoding, other then ASCII, that shall be used to convert the string to as byte array.</param>
+            <param name="reverse">Determine if the byte[] shall be reversed. (swap bytes aka endian swap)</param>
+            <returns>The converted string as byte[].</returns>
+        </member>
+        <member name="M:Make_FSELF.StringExtension.XReplace(System.String,System.String,System.String)">
+            <summary>
+            XReg Replace some pattern from a source string with a given string.
+            </summary>
+            <param name="source">The source string to use.</param>
+            <param name="searchPattern">The pattern to search for.</param>
+            <param name="replaceWith">The string to replace with.</param>
+            <returns>The Replaced string, if any found.</returns>
+        </member>
+        <member name="M:Make_FSELF.StringExtension.XReplace(System.String,System.String,System.String,System.Text.RegularExpressions.RegexOptions)">
+            <summary>
+            XReg Replace some pattern from a source string with a given string with Regex Options.
+            </summary>
+            <param name="source">The source string to use.</param>
+            <param name="searchPattern">The pattern to search for.</param>
+            <param name="replaceWith">The string to replace with.</param>
+            <param name="options">Define some Regex options.</param>
+            <returns>The Replaced string, if any found.</returns>
+        </member>
+        <member name="M:Make_FSELF.StringExtension.Replace(System.String,System.String,System.String,System.StringComparison)">
+            <summary>
+            Replace a string, from string, with another one including StringComparison option.
+            </summary>
+            <param name="source">The source string to check.</param>
+            <param name="replace">The string that shall be looked for.</param>
+            <param name="with">The string that shall be replaced with the string to look for.</param>
+            <param name="comparison">String Comparison options.</param>
+            <returns>The formatted String.</returns>
+        </member>
+        <member name="M:Make_FSELF.StringExtension.ReplaceLineBreak(System.String)">
+            <summary>
+            Replace Line Break out of hte source string.
+            </summary>
+            <param name="source">The source string to use.</param>
+            <returns>The Formated string without line breaks.</returns>
+        </member>
+        <member name="T:Make_FSELF.ByteExtension">
+            <summary>
+            A BinaryReader extansion.
+            </summary>
+        </member>
+        <member name="M:Make_FSELF.ByteExtension.ToFile(System.Byte[],System.String,System.Int64,System.Int64,System.Int64)">
+            <summary>
+            Write a byte array to file. If no destination indexer is defined and the File already Exists,
+            the routine will delete the file first then. Includes IO Exception Handling.
+            </summary>
+            <param name="source">The byte[] with data to write.</param>
+            <param name="destination">The file to write into.</param>
+            <param name="_sourceIndex">Specific position within the source buffer from where we shall start to read bytes.</param>
+            <param name="_length">Specifc amount of bytes that shall be written to the file.</param>
+            <param name="_destinationIndex">Specific position within the destination file from where we shall start to write into.</param>
+        </member>
+        <member name="T:Make_FSELF.RichTextBoxExtension">
+            <summary>
+            Some RichTextBox Extansions.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.RichTextBoxExtension.controle">
+            <summary>
+            Static control to set if wanted.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.RichTextBoxExtension.contextMenuNames">
+            <summary>
+            Some Standart ContextMenu Items.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.RichTextBoxExtension.readKey">
+            <summary>
+            Used form the ReadLine function to tell the key changed event that it shall start to store the pressed keys.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.RichTextBoxExtension.keyReaded">
+            <summary>
+            Used from the key changed event to tell the ReadLine function it can return the readed string.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.RichTextBoxExtension.readLine">
+            <summary>
+            The user input.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.RichTextBoxExtension.indexer">
+            <summary>
+            Used to store the actual postition within the RichTextBox before we start the Key Changed Event. So indexer will point to start of the user input.
+            </summary>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.InitContextMenu(System.Windows.Forms.RichTextBox,System.EventHandler[])">
+            <summary>
+            Initialize the RichTextBox Context Menu.
+            </summary>
+            <param name="source">The RichTextBox to use.</param>
+            <param name="actions"></param>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.SetControl(System.Windows.Forms.RichTextBox,System.Windows.Forms.Control)">
+            <summary>
+            Set the internal static used control for invoking.
+            </summary>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.CopyInvoke(System.Windows.Forms.RichTextBox,System.Windows.Forms.Control)">
+            <summary>
+            Call the RichTextBox.Copy() function with invoke if needed.
+            </summary>
+            <param name="source">The source RichTextBox where this extansion shall be used.</param>
+            <param name="control">The control which shall be invoken if required.</param>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.CopyInvoke(System.Windows.Forms.RichTextBox)">
+            <summary>
+            Call the RichTextBox.Copy() function with invoke if needed.
+            </summary>
+            <param name="source">The source RichTextBox where this extansion shall be used.</param>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.CutInvoke(System.Windows.Forms.RichTextBox,System.Windows.Forms.Control)">
+            <summary>
+            Call the RichTextBox.Cut() function with invoke if needed.
+            </summary>
+            <param name="source">The source RichTextBox where this extansion shall be used.</param>
+            <param name="control">The control which shall be invoken if required.</param>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.CutInvoke(System.Windows.Forms.RichTextBox)">
+            <summary>
+            Call the RichTextBox.Cut() function with invoke if needed.
+            </summary>
+            <param name="source">The source RichTextBox where this extansion shall be used.</param>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.ClearInvoke(System.Windows.Forms.RichTextBox,System.Windows.Forms.Control)">
+            <summary>
+            Call the RichTextBox.Clear() function with invoke if needed.
+            </summary>
+            <param name="source">The source RichTextBox where this extansion shall be used.</param>
+            <param name="control">The control which shall be invoken if required.</param>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.ClearInvoke(System.Windows.Forms.RichTextBox)">
+            <summary>
+            Call the RichTextBox.Clear() function with invoke if needed.
+            </summary>
+            <param name="source">The source RichTextBox where this extansion shall be used.</param>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.PasteInvoke(System.Windows.Forms.RichTextBox,System.Windows.Forms.Control)">
+            <summary>
+            Call the RichTextBox.Paste() function with invoke if needed.
+            </summary>
+            <param name="source">The source RichTextBox where this extansion shall be used.</param>
+            <param name="control">The control which shall be invoken if required.</param>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.PasteInvoke(System.Windows.Forms.RichTextBox)">
+            <summary>
+            Call the RichTextBox.Paste() function with invoke if needed.
+            </summary>
+            <param name="source">The source RichTextBox where this extansion shall be used.</param>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.Save(System.Windows.Forms.RichTextBox,System.Windows.Forms.Control)">
+            <summary>
+            Call the RichTextBox.Save() function with invoke if needed.
+            </summary>
+            <param name="source">The source RichTextBox where this extansion shall be used.</param>
+            <param name="control">The control which shall be invoken if required.</param>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.Save(System.Windows.Forms.RichTextBox)">
+            <summary>
+            Call the RichTextBox.Save() function with invoke if needed.
+            </summary>
+            <param name="source">The source RichTextBox where this extansion shall be used.</param>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.SaveBin(System.Windows.Forms.RichTextBox,System.Windows.Forms.Control)">
+            <summary>
+            Call the RichTextBox.SaveBin() function with invoke if needed.
+            </summary>
+            <param name="source">The source RichTextBox where this extansion shall be used.</param>
+            <param name="control">The control which shall be invoken if required.</param>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.SaveBin(System.Windows.Forms.RichTextBox)">
+            <summary>
+            Call the RichTextBox.SaveBin() function with invoke if needed.
+            </summary>
+            <param name="source">The source RichTextBox where this extansion shall be used.</param>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.SelectAllInvoke(System.Windows.Forms.RichTextBox,System.Windows.Forms.Control)">
+            <summary>
+            Call the RichTextBox.SelectAll() function with invoke if needed.
+            </summary>
+            <param name="source">The source RichTextBox where this extansion shall be used.</param>
+            <param name="control">The control which shall be invoken if required.</param>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.SelectAllInvoke(System.Windows.Forms.RichTextBox)">
+            <summary>
+            Call the RichTextBox.SelectAll() function with invoke if needed.
+            </summary>
+            <param name="source">The source RichTextBox where this extansion shall be used.</param>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.UndoText(System.Windows.Forms.RichTextBox,System.Windows.Forms.Control)">
+            <summary>
+            Undo text within a richTextBox and Invoke the Control if needed.
+            </summary>
+            <param name="control">The control, that own the RichTextBox and, which we may need to Invoke.</param>
+            <param name="source">The RichTextBox within we shall undo the text.</param>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.UndoText(System.Windows.Forms.RichTextBox)">
+            <summary>
+            Undo text within a richTextBox and Invoke the Control if needed.
+            </summary>
+            <param name="source">The RichTextBox within we shall undo the text.</param>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.UndoTextDo(System.Windows.Forms.RichTextBox)">
+            <summary>
+            The actually function of UndoText().
+            </summary>
+            <param name="source">The RichTextBox within we shall undo the text.</param>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.Write(System.Windows.Forms.RichTextBox,System.Windows.Forms.Control,System.String,System.Object[])">
+            <summary>
+            Write text within a RichTextBox and Invoke the Control if needed.
+            </summary>
+            <param name="control">The control, that own the RichTextBox and, which we may need to Invoke.</param>
+            <param name="source">The RichTextBox in which we shall change the text.</param>
+            <param name="write">The string to format.</param>
+            <param name="format">A string array containing all the arguments to replace.</param>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.Write(System.Windows.Forms.RichTextBox,System.String,System.Object[])">
+            <summary>
+            Write text within a RichTextBox and Invoke the Control if needed.
+            </summary>
+            <param name="source">The RichTextBox in which we shall change the text.</param>
+            <param name="write">The string to format.</param>
+            <param name="format">A string array containing all the arguments to replace.</param>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.WriteDo(System.Windows.Forms.RichTextBox,System.String)">
+            <summary>
+            The actually function of Write().
+            </summary>
+            <param name="source">The RichTextBox in which we shall change the text.</param>
+            <param name="write">The string to write.</param>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.WriteLine(System.Windows.Forms.RichTextBox,System.Windows.Forms.Control,System.String,System.Object[])">
+            <summary>
+            Write text, and add a line ending to it, within a RichTextBox and Invoke the Control if needed.
+            </summary>
+            <param name="control">The control, that own the RichTextBox and, which we may need to Invoke.</param>
+            <param name="source">The RichTextBox in which we shall change the text.</param>
+            <param name="write">The string to format.</param>
+            <param name="format">A string array containing all the arguments to replace.</param>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.WriteLine(System.Windows.Forms.RichTextBox,System.String,System.Object[])">
+            <summary>
+            Write text, and add a line ending to it, within a RichTextBox and Invoke the Control if needed.
+            </summary>
+            <param name="source">The RichTextBox in which we shall change the text.</param>
+            <param name="write">The string to format.</param>
+            <param name="format">A string array containing all the arguments to replace.</param>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.WriteLineDo(System.Windows.Forms.RichTextBox,System.String)">
+            <summary>
+            The actually function of WriteLine().
+            </summary>
+            <param name="source">The RichTextBox in which we shall change the text.</param>
+            <param name="write">The string to write.</param>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.WriteColor(System.Windows.Forms.RichTextBox,System.String,System.Drawing.Color)">
+            <summary>
+            Write a string to the RTB using a specific color.
+            </summary>
+            <param name="source">The RichTextBox in which we shall write the colorized text.</param>
+            <param name="write">The string to write.</param>
+            <param name="color">The Color to use for this string.</param>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.WriteColorDo(System.Windows.Forms.RichTextBox,System.String,System.Drawing.Color)">
+            <summary>
+            Write a string to the RTB using a specific color.
+            </summary>
+            <param name="source">The RichTextBox in which we shall write the colorized text.</param>
+            <param name="write">The string to write.</param>
+            <param name="color">The Color to use for this string.</param>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.ReadLine(System.Windows.Forms.RichTextBox,System.Windows.Forms.Control)">
+            <summary>
+            A Read Line extension for the rich text box. Needs a "Key changed" event within the gui code.
+            </summary>
+            <param name="source">The RichTextBox in which we shall change the text.</param>
+            <param name="control">The control, that own the RichTextBox and, which we may need to Invoke.</param>
+            <returns>The user input.</returns>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.ReadLine(System.Windows.Forms.RichTextBox)">
+            <summary>
+            A Read Line extension for the rich text box. Needs a "Key changed" event within the gui code.
+            </summary>
+            <param name="source">The RichTextBox in which we shall change the text.</param>
+            <returns>The user input.</returns>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.LastLine(System.Windows.Forms.RichTextBox)">
+            <summary>
+            Returns the Last Line of the RichTextBox.
+            </summary>
+            <param name="source">The RichTextBox from where the Last Line shall be returned.</param>
+            <returns>The Last Line of a RichTextBox Instanze.</returns>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.LastLine(System.Windows.Forms.RichTextBox,System.Windows.Forms.Control)">
+            <summary>
+            Returns the Last Line of the RichTextBox.
+            </summary>
+            <param name="source">The RichTextBox from where the Last Line shall be returned.</param>
+            <param name="control">The control which shall be invoken if required.</param>
+            <returns>The Last Line of a RichTextBox Instanze.</returns>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.CursorTop(System.Windows.Forms.RichTextBox,System.Windows.Forms.Control)">
+            <summary>
+            Get the RichTextBox actual line.
+            </summary>
+            <param name="source">The RichTextBox from where the Last Line shall be returned.</param>
+            <param name="control">The control which shall be invoken if required.</param>
+            <returns>The actual line number.</returns>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.CursorTop(System.Windows.Forms.RichTextBox)">
+            <summary>
+            Get the RichTextBox actual line.
+            </summary>
+            <param name="source">The RichTextBox from where the Last Line shall be returned.</param>
+            <returns>The actual line number.</returns>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.CursorLeft(System.Windows.Forms.RichTextBox,System.Windows.Forms.Control)">
+            <summary>
+            Get the RichTextBox actual cursor index within the actual line.
+            </summary>
+            <param name="source">The RichTextBox from where the Last Line shall be returned.</param>
+            <param name="control">The control which shall be invoken if required.</param>
+            <returns>The actual position of the cursor within the actual line.</returns>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.CursorLeft(System.Windows.Forms.RichTextBox)">
+            <summary>
+            Get the RichTextBox actual cursor index within the actual line.
+            </summary>
+            <param name="source">The RichTextBox from where the Last Line shall be returned.</param>
+            <returns>The actual position of the cursor within the actual line.</returns>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.SetReadOnly(System.Windows.Forms.RichTextBox,System.Boolean)">
+            <summary>
+            Invoked Function for the RTB ReadOnly param.
+            </summary>
+            <param name="source">The RichTextBox within we shall change the ReadOnly state.</param>
+            <param name="state">The state to set of the ReadOnly param.</param>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.GetReadOnly(System.Windows.Forms.RichTextBox)">
+            <summary>
+            Invoked Function for the RTB ReadOnly param.
+            </summary>
+            <param name="source">The RichTextBox within we shall get the ReadOnly state.</param>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.SetSelect(System.Windows.Forms.RichTextBox,System.Int32,System.Int32)">
+            <summary>
+            Set a Selected text.
+            </summary>
+            <param name="source">The RichTextBox within we shall change the SelectionStart.</param>
+            <param name="start">The start indexer within the rtb.</param>
+            <param name="length">The length to select.</param>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.SetSelectionColor(System.Windows.Forms.RichTextBox)">
+            <summary>
+            Get the Color for the SelectedText param.
+            </summary>
+            <param name="source">The RichTextBox within we shall change the SelectionStart.</param>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.SetSelectionColor(System.Windows.Forms.RichTextBox,System.Drawing.Color)">
+            <summary>
+            Set the Color for the SelectedText param.
+            </summary>
+            <param name="source">The RichTextBox within we shall change the SelectionStart.</param>
+            <param name="textColor">The Color to set.</param>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.SetSelectionStart(System.Windows.Forms.RichTextBox,System.Int32)">
+            <summary>
+            Invoked Function for the RTB SelectionStart param.
+            </summary>
+            <param name="source">The RichTextBox within we shall change the SelectionStart.</param>
+            <param name="index">The indexer to set of the SelectionStart param.</param>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.GetSelectionStart(System.Windows.Forms.RichTextBox)">
+            <summary>
+            Invoked Function for the RTB SelectionStart param.
+            </summary>
+            <param name="source">The RichTextBox within we shall get the SelectionStart.</param>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.SetSelectionLength(System.Windows.Forms.RichTextBox,System.Int32)">
+            <summary>
+            Invoked Function for the RTB SelectionLength param.
+            </summary>
+            <param name="source">The RichTextBox within we shall change the SelectionLength.</param>
+            <param name="index">The indexer to set of the SelectionLength param.</param>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.GetSelectionLength(System.Windows.Forms.RichTextBox)">
+            <summary>
+            Invoked Function for the RTB SelectionLength param.
+            </summary>
+            <param name="source">The RichTextBox within we shall get the SelectionLength.</param>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.SetSelectedText(System.Windows.Forms.RichTextBox,System.String)">
+            <summary>
+            Invoked Function for the RTB SelectedText param.
+            </summary>
+            <param name="source">The RichTextBox within we shall change the SelectedText.</param>
+            <param name="toSet">The string to set of the SelectedText param.</param>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.GetSelectedText(System.Windows.Forms.RichTextBox)">
+            <summary>
+            Invoked Function for the RTB SelectedText param.
+            </summary>
+            <param name="source">The RichTextBox within we shall get the SelectedText.</param>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.SetForeColor(System.Windows.Forms.RichTextBox,System.Drawing.Color)">
+            <summary>
+            Invoked Function for the RTB ForeColor param.
+            </summary>
+            <param name="source">The RichTextBox within we shall change the ForeColor.</param>
+            <param name="toSet">The Color to set of the ForeColor param.</param>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.GetForeColor(System.Windows.Forms.RichTextBox)">
+            <summary>
+            Invoked Function for the RTB ForeColor param.
+            </summary>
+            <param name="source">The RichTextBox within we shall get the ForeColor.</param>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.SetBackColor(System.Windows.Forms.RichTextBox,System.Drawing.Color)">
+            <summary>
+            Invoked Function for the RTB BackColor param.
+            </summary>
+            <param name="source">The RichTextBox within we shall change the BackColor.</param>
+            <param name="toSet">The Color to set of the BackColor param.</param>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.GetBackColor(System.Windows.Forms.RichTextBox)">
+            <summary>
+            Invoked Function for the RTB BackColor param.
+            </summary>
+            <param name="source">The RichTextBox within we shall get the BackColor.</param>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.SetText(System.Windows.Forms.RichTextBox,System.String)">
+            <summary>
+            Invoked Function for the RTB Text param.
+            </summary>
+            <param name="source">The RichTextBox within we shall change the Text.</param>
+            <param name="toSet">The string to set of the Text param.</param>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.GetText(System.Windows.Forms.RichTextBox)">
+            <summary>
+            Invoked Function for the RTB Text param.
+            </summary>
+            <param name="source">The RichTextBox within we shall get the Text.</param>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.GetTextLength(System.Windows.Forms.RichTextBox)">
+            <summary>
+            Invoked Function for the RTB TextLength param.
+            </summary>
+            <param name="source">The RichTextBox within we shall get the TextLength.</param>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.GetFirstCharIndexFromLin(System.Windows.Forms.RichTextBox,System.Int32)">
+            <summary>
+            Invoke Function for the RTB GetFirstCharIndexFromLine cast.
+            </summary>
+            <param name="source">The RichTextBox within we shall get the Indexer.</param>
+            <param name="lineIndex">The Indexer of Line from where to get the index of the Frist Char within this line.</param>
+            <returns>The index of the Frist Char from the specified line.</returns>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.SetLine(System.Windows.Forms.RichTextBox,System.Int32,System.String)">
+            <summary>
+            Invoke Function for the RTB Lines array.
+            </summary>
+            <param name="source">The RichTextBox within we shall set a line.</param>
+            <param name="lineIndex">The Indexer of Line from where to get the index of the Frist Char within this line.</param>
+            <param name="value">The string to set.</param>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.SetLineDo(System.Windows.Forms.RichTextBox,System.Int32,System.String)">
+            <summary>
+            Invoke Function for the RTB Lines array.
+            </summary>
+            <param name="source">The RichTextBox within we shall set a line.</param>
+            <param name="lineIndex">The Indexer of Line from where to get the index of the Frist Char within this line.</param>
+            <param name="value">The string to set.</param>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.GetLine(System.Windows.Forms.RichTextBox,System.Int32)">
+            <summary>
+            Invoke Function for the RTB Lines array.
+            </summary>
+            <param name="source">The RichTextBox within we shall get a line.</param>
+            <param name="lineIndex">The Indexer from a line to get.</param>
+            <returns>The string value of the Line to get.</returns>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.SetSelectionFont(System.Windows.Forms.RichTextBox,System.Drawing.Font)">
+            <summary>
+            Invoke Function for the RTB SelectionFont param.
+            </summary>
+            <param name="source">The RichTextBox within we shall set the Font.</param>
+            <param name="toSet">The font to set.</param>
+        </member>
+        <member name="M:Make_FSELF.RichTextBoxExtension.GetSelectionFont(System.Windows.Forms.RichTextBox)">
+            <summary>
+            Invoke Function for the RTB SelectionFont param.
+            </summary>
+            <param name="source">The RichTextBox within we shall get the Font.</param>
+            <returns>The actual Font of the RTB.</returns>
+        </member>
+        <member name="T:Make_FSELF.BitmapExtension">
+            <summary>
+            Bitmap Extension.
+            </summary>
+        </member>
+        <member name="M:Make_FSELF.BitmapExtension.Resize(System.Drawing.Image,System.Int32,System.Int32)">
+            <summary>
+            Resize the image to the specified width and height.
+            </summary>
+            <param name="image">The image to resize.</param>
+            <param name="width">The width to resize to.</param>
+            <param name="height">The height to resize to.</param>
+            <returns>The resized image.</returns>
+        </member>
+        <member name="T:Make_FSELF.ClipboardWatcher">
+            <summary>
+            A ClipboardWatcher to add a ContentChanged Event to it.
+            </summary>
+        </member>
+        <member name="T:Make_FSELF.ClipboardWatcher.ClipboardEvent">
+            <summary>
+            A public Clipboard Event.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="args">The Event Arguments.</param>
+        </member>
+        <member name="E:Make_FSELF.ClipboardWatcher.ContentPresent">
+            <summary>
+            Accoures when the Content of the Clipboard hase Data Present.
+            </summary>
+        </member>
+        <member name="E:Make_FSELF.ClipboardWatcher.ContentChanged">
+            <summary>
+            Accoures when the Content of the Clipboard hase changed.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.ClipboardWatcher.watch">
+            <summary>
+            The Thread that will check for changed content and then Fire a Event.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.ClipboardWatcher.dataFormats">
+            <summary>
+            DataFormats, all in one string Array. For the abstract string dataFormat, so he can check if the overloaded Format is a valid one.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.ClipboardWatcher.DataFormat">
+            <summary>
+             A speciffic DataFormat to look for within the Clipboard. By default it is set to Text.
+            </summary>
+        </member>
+        <member name="M:Make_FSELF.ClipboardWatcher.#ctor">
+            <summary>
+            Instance Initializer.
+            </summary>
+        </member>
+        <member name="M:Make_FSELF.ClipboardWatcher.#ctor(System.String,System.Boolean)">
+            <summary>
+            Instance Initializer with define of the DataFormat to watch and with the option to run the Watcher immediately.
+            </summary>
+            <param name="_dataFormat">The DataFormat to watch for.</param>
+            <param name="start">Determine to run the Watcher immediately</param>
+        </member>
+        <member name="M:Make_FSELF.ClipboardWatcher.FireContentPresent(System.Object,Make_FSELF_GUI.AppEventArgs)">
+            <summary>
+            Fire the ContentPresent Event.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="args">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.ClipboardWatcher.FireContentChanged(System.Object,Make_FSELF_GUI.AppEventArgs)">
+            <summary>
+            Fire the ContentChanged Event.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="args">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.ClipboardWatcher.CheckDataFormat">
+            <summary>
+            Check the DataFormat if it is a valid one.
+            </summary>
+            <returns>True if 'DataFormat' is of type of 'DataFormats', else false.</returns>
+        </member>
+        <member name="M:Make_FSELF.ClipboardWatcher.StartWatching">
+            <summary>
+            Runs the Watch Thread if not running.
+            </summary>
+        </member>
+        <member name="M:Make_FSELF.ClipboardWatcher.StopWatching">
+            <summary>
+            Stops the Watch Thread if it is running.
+            </summary>
+        </member>
+        <member name="M:Make_FSELF.ClipboardWatcher.Watching">
+            <summary>
+            A Thread to check the clipboard loop wise and fire a event 
+            </summary>
+        </member>
+        <member name="T:Make_FSELF.SwissKnife">
+            <summary>
+            A Class to Manipulate the Registry.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.SwissKnife.CSKE">
+            <summary>
+            Make the output for the exception nice.
+            </summary>
+        </member>
+        <member name="T:Make_FSELF.SwissKnife.SwissKnifeEvent">
+            <summary>
+            A Event Handler for the TSwissArmyKnife class.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="args">The Application Arguments.</param>
+        </member>
+        <member name="T:Make_FSELF.SwissKnife.SwissKnifeExceptionEvent">
+            <summary>
+            A Exception Event Handler for the SwissArmyKnife class.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="args">The Application Arguments.</param>
+        </member>
+        <member name="E:Make_FSELF.SwissKnife.SwissKnifeException">
+            <summary>
+            A Event to handle exceptions.
+            </summary>
+        </member>
+        <member name="E:Make_FSELF.SwissKnife.SwissKnifeWriteByteProgress">
+            <summary>
+            A Event that reports readed or written bytes to the outside.
+            </summary>
+        </member>
+        <member name="M:Make_FSELF.SwissKnife.FireSwissKnifeException(Make_FSELF_GUI.ExceptionEventArgs)">
+            <summary>
+            Cast a new event off 'OnToolsException', but only if we have such one globaly defined.
+            </summary>
+            <param name="args">The Application Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.SwissKnife.FireSwissKnifeWriteByteProgress(Make_FSELF_GUI.SwissKnifeEventArgs)">
+            <summary>
+            Cast a new event off 'OnToolsWriteByteProgress', but only if we have such one globaly defined.
+            </summary>
+            <param name="args">The Application Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.SwissKnife.CheckRegKey(System.String,System.String)">
+            <summary>
+            Check for a specific Registry Key.
+            </summary>
+            <param name="keyToCheck">The key to check for. Including path.</param>
+            <param name="level">The Level of he Registry to check. (hklm = Hot Key Local Machine, hkcu = Hot Key Current User,....)</param>
+            <returns>True if the key was found, else false.</returns>
+        </member>
+        <member name="M:Make_FSELF.SwissKnife.CheckByteAndHexAllign(Make_FSELF.ByteAllign,Make_FSELF.HexAllign)">
+            <summary>
+            Check the Byte and Hex Allignment for missmatch. If so it corrects them and returns the result.
+            </summary>
+            <param name="_byte">The Byte Allignment as enum.</param>
+            <param name="_hex">The Hex Allignment as enum.</param>
+            <returns>The corrected Allignment if missmatch, else it returns the orig values.</returns>
+        </member>
+        <member name="T:Make_FSELF.Anch">
+            <summary>
+            Anchor Styles shortages.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.Anch.All">
+            <summary>
+            Define to use All AnchorStyles.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.Anch.BR">
+            <summary>
+            Define to use only Bottom and Right AnchorStyle.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.Anch.BL">
+            <summary>
+            Define to use only Bottom and Left AnchorStyle.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.Anch.BLR">
+            <summary>
+            Define to use only Bottom and Left AnchorStyle.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.Anch.TL">
+            <summary>
+            Define to use only Top and Left AnchorStyle.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.Anch.TR">
+            <summary>
+            Define to use only Top and Right AnchorStyle.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.Anch.LR">
+            <summary>
+            Define to use only Left and Right AnchorStyle.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.Anch.TLR">
+            <summary>
+            Define to use Top, Left and Right AnchorStyle.
+            </summary>
+        </member>
+        <member name="T:Make_FSELF.ButtonExtension">
+            <summary>
+            Button Extension.
+            </summary>
+        </member>
+        <member name="M:Make_FSELF.ButtonExtension.Center(System.Windows.Forms.Button,System.Windows.Forms.Control)">
+            <summary>
+            Center a Button.
+            </summary>
+            <param name="source">The Button to center.</param>
+            <param name="parent">The Parent Control to center in.</param>
+        </member>
+        <member name="M:Make_FSELF.ButtonExtension.Center(System.Windows.Forms.Button,System.Windows.Forms.Control,System.Windows.Forms.Button[])">
+            <summary>
+            Center a range of Buttons.
+            </summary>
+            <param name="source">The Button to center.</param>
+            <param name="parent">The Parent Control to center in.</param>
+            <param name="otherButtons">The Other Buttons to Center too.</param>
+        </member>
+        <member name="M:Make_FSELF.ButtonExtension.Left(System.Windows.Forms.Button,System.Windows.Forms.Control)">
+            <summary>
+            Allign a Button on the Left.
+            </summary>
+            <param name="source">The Button to allign on the Left.</param>
+            <param name="parent">The Parent Control to allign in.</param>
+        </member>
+        <member name="M:Make_FSELF.ButtonExtension.Left(System.Windows.Forms.Button,System.Windows.Forms.Control,System.Windows.Forms.Button[])">
+            <summary>
+            Allign Buttons on the Left.
+            </summary>
+            <param name="source">The Button to allign on the Left.</param>
+            <param name="parent">The Parent Control to allign in.</param>
+            <param name="otherButtons">The Other Buttons to allign too.</param>
+        </member>
+        <member name="M:Make_FSELF.ButtonExtension.Right(System.Windows.Forms.Button,System.Windows.Forms.Control)">
+            <summary>
+            Allign Buttons on the Right.
+            </summary>
+            <param name="source">The Button to allign on the Right.</param>
+            <param name="parent">The Parent Control to allign in.</param>
+        </member>
+        <member name="M:Make_FSELF.ButtonExtension.Right(System.Windows.Forms.Button,System.Windows.Forms.Control,System.Windows.Forms.Button[])">
+            <summary>
+            Allign Buttons on the Right.
+            </summary>
+            <param name="source">The Button to allign on the Right.</param>
+            <param name="parent">The Parent Control to allign in.</param>
+            <param name="otherButtons">The Other Buttons to allign too.</param>
+        </member>
+        <member name="T:Make_FSELF.CustomDialog">
+            <summary>
+            A Custom Dialog Form which can be adjusted on wish.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.CustomDialog.dialog">
+            <summary>
+            Controls for our custom Dialogs.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.CustomDialog.textBox">
+            <summary>
+            A textBox for hte Input Dialog.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.CustomDialog.checkBox">
+            <summary>
+            A CheckBox for the Custom Dialog.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.CustomDialog.list">
+            <summary>
+            Controls for the List Dialog.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.CustomDialog.buttonAdd">
+            <summary>
+            Button Add.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.CustomDialog.buttonRename">
+            <summary>
+            Button Rename.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.CustomDialog.buttonShow">
+            <summary>
+            Button Show.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.CustomDialog.buttonRemove">
+            <summary>
+            Button Remove.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.CustomDialog.buttonOKList">
+            <summary>
+            Button Ok for hte List dialog.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.CustomDialog.listBox">
+            <summary>
+            ListBox.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.CustomDialog.ListClicks">
+            <summary>
+            EventHandler for clicks for the List Dialog.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.CustomDialog.Size">
+            <summary>
+            The Size of the Dialog. (only used for the Input Dialog to adjust)
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.CustomDialog.Font">
+            <summary>
+            Define a Font to use for the message text.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.CustomDialog.DialogIcon">
+            <summary>
+            The Icon for the Dialog to use.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.CustomDialog.DialogBack">
+            <summary>
+            The Label aka Message Back Color.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.CustomDialog.DialogFore">
+            <summary>
+            The Label aka Message Fore Color.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.CustomDialog.TextBack">
+            <summary>
+            The InputBox Back Color.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.CustomDialog.TextFore">
+            <summary>
+            The InputBox Fore Color.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.CustomDialog.FormBack">
+            <summary>
+            The Form Back Color.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.CustomDialog.FormFore">
+            <summary>
+            The Form Fore Color.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.CustomDialog.soundPlayer">
+            <summary>
+            A SoundPlayer for the Dialog.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.CustomDialog.Message">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.CustomDialog.UsePanel">
+            <summary>
+            Determine to use a Panel Control for the Dialog.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.CustomDialog.AutoSize">
+            <summary>
+            The Form AutoSize defination.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.CustomDialog.ShowIcon">
+            <summary>
+            Show a Icon for this Dialog. (default is false)
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.CustomDialog.AutoLineBreak">
+            <summary>
+            Determine to use Auto LineBreak on the Messages.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.CustomDialog.UseIcons">
+            <summary>
+            Determine to use Icons for the buttons or not.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.CustomDialog.Checked">
+            <summary>
+            Reflects the checkBox checked state.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.CustomDialog.playSound">
+            <summary>
+            Tell the OnLoad Event to run a Sound.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.CustomDialog.UsrInput">
+            <summary>
+            Reflects the InputBox Text.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.CustomDialog.Start">
+            <summary>
+            Center the Form to his Parent by default.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.CustomDialog.Border">
+            <summary>
+            Set Border Style to FixedSingle by Default.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.CustomDialog.Cursor">
+            <summary>
+            The position of the Cursor within the TextBox.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.CustomDialog.ButtonPosition">
+            <summary>
+            The position of the buttons. Left, Center or Right. (default is Right)
+            </summary>
+        </member>
+        <member name="M:Make_FSELF.CustomDialog.#ctor(System.String,System.String)">
+            <summary>
+            Initialize a basic Dialog Form.
+            </summary>
+            <param name="text">The Message Text.</param>
+            <param name="caption">The Name of the Dialog.</param>
+        </member>
+        <member name="M:Make_FSELF.CustomDialog.#ctor(System.String,System.String,System.Drawing.Image)">
+            <summary>
+            Initialize a basic Dialog Form.
+            </summary>
+            <param name="text">The Message Text.</param>
+            <param name="caption">The Name of the Dialog.</param>
+            <param name="icon">The picture to display within the form.</param>
+        </member>
+        <member name="M:Make_FSELF.CustomDialog.#ctor(System.String,System.String,System.Drawing.Image,System.String)">
+            <summary>
+            Initialize a basic Dialog Form.
+            </summary>
+            <param name="text">The Message Text.</param>
+            <param name="caption">The Name of the Dialog.</param>
+            <param name="icon">The picture to display within the form.</param>
+            /// <param name="check">The string of the checkbox to display.</param>
+        </member>
+        <member name="M:Make_FSELF.CustomDialog.#ctor(System.String,System.String,System.Drawing.Image,System.String,System.Boolean)">
+            <summary>
+            Initialize a basic Dialog Form.
+            </summary>
+            <param name="text">The Message Text.</param>
+            <param name="caption">The Name of the Dialog.</param>
+            <param name="icon">The picture to display within the form.</param>
+            <param name="check">The string of the checkbox to display.</param>
+            <param name="checkState">The check state of the check box.</param>
+        </member>
+        <member name="M:Make_FSELF.CustomDialog.#ctor(System.String,System.String,Make_FSELF.Buttons)">
+            <summary>
+            Initialize a basic Dialog Form.
+            </summary>
+            <param name="text">The Message Text.</param>
+            <param name="caption">The Name of the Dialog.</param>
+            <param name="secondButton">Add a second Button to the form and define which button it shell be.</param> 
+        </member>
+        <member name="M:Make_FSELF.CustomDialog.#ctor(System.String,System.String,Make_FSELF.Buttons,System.Drawing.Image)">
+            <summary>
+            Initialize a basic Dialog Form.
+            </summary>
+            <param name="text">The Message Text.</param>
+            <param name="caption">The Name of the Dialog.</param>
+            <param name="secondButton">Add a second Button to the form and define which button it shell be.</param> 
+            <param name="icon">The picture to display within the form.</param>
+        </member>
+        <member name="M:Make_FSELF.CustomDialog.#ctor(System.String,System.String,Make_FSELF.Buttons,System.Drawing.Image,System.IO.Stream)">
+            <summary>
+            Initialize a basic Dialog Form.
+            </summary>
+            <param name="text">The Message Text.</param>
+            <param name="caption">The Name of the Dialog.</param>
+            <param name="secondButton">Add a second Button to the form and define which button it shell be.</param> 
+            <param name="icon">The picture to display within the form.</param>
+            <param name="sound">The sound to play.</param>
+        </member>
+        <member name="M:Make_FSELF.CustomDialog.#ctor(System.String,System.String,Make_FSELF.Buttons,System.Drawing.Image,System.String,System.Boolean)">
+            <summary>
+            Initialize a basic Dialog Form.
+            </summary>
+            <param name="text">The Message Text.</param>
+            <param name="caption">The Name of the Dialog.</param>
+            <param name="secondButton">Add a second Button to the form and define which button it shell be.</param> 
+            <param name="icon">The picture to display within the form.</param>
+            <param name="check">The string of the checkbox to display.</param>
+            <param name="checkState">The check state of the check box.</param>
+        </member>
+        <member name="M:Make_FSELF.CustomDialog.#ctor(System.String,System.String,Make_FSELF.Buttons,System.String,System.Boolean)">
+            <summary>
+            Initialize a basic Dialog Form.
+            </summary>
+            <param name="text">The Message Text.</param>
+            <param name="caption">The Name of the Dialog.</param>
+            <param name="secondButton">Add a second Button to the form and define which button it shell be.</param> 
+            <param name="check">The string of the checkbox to display.</param>
+            <param name="checkState">The check state of the check box.</param>
+        </member>
+        <member name="M:Make_FSELF.CustomDialog.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Initialize a basic Dialog Form.
+            </summary>
+            <param name="text">The Message Text.</param>
+            <param name="caption">The Name of the Dialog.</param>
+            <param name="check">The string of the checkbox to display.</param>
+        </member>
+        <member name="M:Make_FSELF.CustomDialog.#ctor(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Initialize a basic Dialog Form.
+            </summary>
+            <param name="text">The Message Text.</param>
+            <param name="caption">The Name of the Dialog.</param>
+            <param name="check">The string of the checkbox to display.</param>
+            <param name="checkState">The check state of the check box.</param>
+        </member>
+        <member name="M:Make_FSELF.CustomDialog.#ctor(System.String,System.String,System.IO.Stream)">
+            <summary>
+            Initialize a basic Dialog Form.
+            </summary>
+            <param name="text">The Message Text.</param>
+            <param name="caption">The Name of the Dialog.</param>
+            <param name="sound">The sound to play.</param>
+        </member>
+        <member name="M:Make_FSELF.CustomDialog.#ctor(System.String,System.String,System.IO.Stream,System.String)">
+            <summary>
+            Initialize a basic Dialog Form.
+            </summary>
+            <param name="text">The Message Text.</param>
+            <param name="caption">The Name of the Dialog.</param>
+            <param name="sound">The sound to play.</param>
+            <param name="check">The string of the checkbox to display.</param>
+        </member>
+        <member name="M:Make_FSELF.CustomDialog.#ctor(System.String,System.String,System.IO.Stream,System.Drawing.Image)">
+            <summary>
+            Initialize a basic Dialog Form.
+            </summary>
+            <param name="text">The Message Text.</param>
+            <param name="caption">The Name of the Dialog.</param>
+            <param name="sound">The sound to play.</param>
+            <param name="icon">The picture to display within the form.</param>
+        </member>
+        <member name="M:Make_FSELF.CustomDialog.#ctor(System.String,System.String,System.IO.Stream,System.Drawing.Image,System.String,System.Boolean)">
+            <summary>
+            Initialize a basic Dialog Form.
+            </summary>
+            <param name="text">The Message Text.</param>
+            <param name="caption">The Name of the Dialog.</param>
+            <param name="sound">The sound to play.</param>
+            <param name="icon">The picture to display within the form.</param>
+            <param name="check">The string of the checkbox to display.</param>
+            <param name="checkState">The check state of the check box.</param>
+        </member>
+        <member name="M:Make_FSELF.CustomDialog.#ctor(System.String,System.String,System.IO.Stream,System.Drawing.Image,System.String)">
+            <summary>
+            Initialize a basic Dialog Form.
+            </summary>
+            <param name="text">The Message Text.</param>
+            <param name="caption">The Name of the Dialog.</param>
+            <param name="sound">The sound to play.</param>
+            <param name="icon">The picture to display within the form.</param>
+            <param name="check">The string of the checkbox to display.</param>
+        </member>
+        <member name="M:Make_FSELF.CustomDialog.#ctor(System.String,System.String,System.IO.Stream,Make_FSELF.Buttons)">
+            <summary>
+            Initialize a basic Dialog Form.
+            </summary>
+            <param name="text">The Message Text.</param>
+            <param name="caption">The Name of the Dialog.</param>
+            <param name="sound">The sound to play.</param>
+            <param name="secondButton">Add a second Button to the form and define which button it shell be.</param>
+        </member>
+        <member name="M:Make_FSELF.CustomDialog.#ctor(System.String,System.String,System.IO.Stream,Make_FSELF.Buttons,System.Drawing.Image,System.String,System.Boolean)">
+            <summary>
+            Initialize a basic Dialog Form.
+            </summary>
+            <param name="text">The Message Text.</param>
+            <param name="caption">The Name of the Dialog.</param>
+            <param name="sound">The sound to play.</param>
+            <param name="secondButton">Add a second Button to the form and define which button it shell be.</param>
+            <param name="icon">The picture to display within the form.</param>
+            <param name="check">The string of the checkbox to display.</param>
+            <param name="checkState">The check state of the check box.</param>
+        </member>
+        <member name="M:Make_FSELF.CustomDialog.#ctor(System.String,System.String,System.IO.Stream,Make_FSELF.Buttons,System.String)">
+            <summary>
+            Initialize a basic Dialog Form.
+            </summary>
+            <param name="text">The Message Text.</param>
+            <param name="caption">The Name of the Dialog.</param>
+            <param name="sound">The sound to play.</param>
+            <param name="secondButton">Add a second Button to the form and define which button it shell be.</param>
+            <param name="check">The string of the checkbox to display.</param>
+        </member>
+        <member name="M:Make_FSELF.CustomDialog.#ctor(System.String,System.String,System.IO.Stream,Make_FSELF.Buttons,System.String,System.Boolean)">
+            <summary>
+            Initialize a basic Dialog Form.
+            </summary>
+            <param name="text">The Message Text.</param>
+            <param name="caption">The Name of the Dialog.</param>
+            <param name="sound">The sound to play.</param>
+            <param name="secondButton">Add a second Button to the form and define which button it shell be.</param>
+            <param name="check">The string of the checkbox to display.</param>
+            <param name="checkState">The check state of the check box.</param>
+        </member>
+        <member name="M:Make_FSELF.CustomDialog.#ctor(System.String,System.String,System.IO.Stream,System.String,System.Boolean)">
+            <summary>
+            Initialize a basic Dialog Form.
+            </summary>
+            <param name="text">The Message Text.</param>
+            <param name="caption">The Name of the Dialog.</param>
+            <param name="sound">The sound to play.</param>
+            <param name="check">The string of the checkbox to display.</param>
+            <param name="checkState">The check state of the check box.</param>
+        </member>
+        <member name="M:Make_FSELF.CustomDialog.Initialize(System.String,System.String)">
+            <summary>
+            Initialize the form.
+            </summary>
+            <param name="text"></param>
+            <param name="caption"></param>
+        </member>
+        <member name="M:Make_FSELF.CustomDialog.AddCheckBox(System.String)">
+            <summary>
+            Add a CheckBox to the Dialog.
+            </summary>
+            <param name="text">The CheckBox Text.</param>
+        </member>
+        <member name="M:Make_FSELF.CustomDialog.AddTextBox(System.String)">
+            <summary>
+            Add a TextBox to the Dialog.
+            </summary>
+            <param name="text">The TextBox Text.</param>
+        </member>
+        <member name="M:Make_FSELF.CustomDialog.AddPicBox(System.Drawing.Image)">
+            <summary>
+            Add a PictureBox to the dialog which will be used as icon box.
+            </summary>
+            <param name="picture">The icon to use.</param>
+        </member>
+        <member name="M:Make_FSELF.CustomDialog.AddSecondButton(Make_FSELF.Buttons)">
+            <summary>
+            Add a second Button to the Dialog.
+            </summary>
+            <param name="button">Buttons to use.</param>
+        </member>
+        <member name="M:Make_FSELF.CustomDialog.AddThirdButton(Make_FSELF.Buttons)">
+            <summary>
+            Add a third Button to the Dialog.
+            </summary>
+            <param name="button">Buttons to use.</param>
+        </member>
+        <member name="M:Make_FSELF.CustomDialog.SetSound(System.IO.Stream)">
+            <summary>
+            Set the SoundPlayer Stream to the new Stream to play and set flag for the OnLoad Event.
+            </summary>
+            <param name="sound">The Sound to set.</param>
+        </member>
+        <member name="M:Make_FSELF.CustomDialog.Dialog_Load(System.Object,System.EventArgs)">
+            <summary>
+            On Load of the Dialog Form do.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.CustomDialog.ShowDialog">
+            <summary>
+            Piped 'ShowDialog()' function.
+            </summary>
+        </member>
+        <member name="T:Make_FSELF.MessagBox">
+            <summary>
+            A MessageBox Wrapper with predifend Casts.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.MessagBox.ErrorImage">
+            <summary>
+            Error Image for the Dialog.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.MessagBox.InfoImage">
+            <summary>
+            Info Image for the Dialog.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.MessagBox.WarningImage">
+            <summary>
+            Alert Image for the Dialog.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.MessagBox.QuestionImage">
+            <summary>
+            Question Image for the Dialog.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.MessagBox.DebugImage">
+            <summary>
+            Debug Image for the Dialog.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.MessagBox.UsePanel">
+            <summary>
+            Determine to use a Panel Control for the Dialog.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.MessagBox.AutoSize">
+            <summary>
+            The Form AutoSize defination.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.MessagBox.ShowIcon">
+            <summary>
+            Show a Icon for this Dialog. (default is false)
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.MessagBox.AutoLineBreak">
+            <summary>
+            Determine to use Auto LineBreak on the Messages.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.MessagBox.UseIcons">
+            <summary>
+            Determine to use Icons for the buttons or not.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.MessagBox.Start">
+            <summary>
+            Center the Form to his Parent by default.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.MessagBox.Border">
+            <summary>
+            Set Border Style to FixedSingle by Default.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.MessagBox.Cursor">
+            <summary>
+            The position of the Cursor within the TextBox.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.MessagBox.ButtonPosition">
+            <summary>
+            The position of the buttons. Left, Center or Right. (default is Right)
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.MessagBox.Checked">
+            <summary>
+            Reflects the checkBox checked state.
+            </summary>
+        </member>
+        <member name="F:Make_FSELF.MessagBox.UsrInput">
+            <summary>
+            Reflects the InputBox Text.
+            </summary>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.Reset">
+            <summary>
+            Reset the public Class vars to their standart.
+            </summary>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.Show(System.String,System.Object[])">
+            <summary>
+            A Simple message dialog.
+            </summary>
+            <param name="text">The message to display.</param>
+            <param name="args">Addional arguments for the message.</param>
+            <returns>The Dialog Result.</returns>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.Show(System.String,System.String,System.Object[])">
+            <summary>
+            A Simple message dialog.
+            </summary>
+            <param name="caption">The title to display.</param>
+            <param name="text">The message to display.</param>
+            <param name="args">Addional arguments for the message.</param>
+            <returns>The Dialog Result.</returns>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.Show(Make_FSELF.Buttons,System.String,System.String,System.Object[])">
+            <summary>
+            A Simple message dialog.
+            </summary>
+            <param name="button">Define other buttons to use.</param>
+            <param name="caption">The title to display.</param>
+            <param name="text">The message to display.</param>
+            <param name="args">Addional arguments for the message.</param>
+            <returns>The Dialog Result.</returns>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.Show(System.String,System.String,System.String,System.Object[])">
+            <summary>
+            A Simple message dialog with a CheckBox added.
+            </summary>
+            <param name="check">The Text of the CheckBox to display.</param>
+            <param name="caption">The title to display.</param>
+            <param name="text">The message to display.</param>
+            <param name="args">Addional arguments for the message.</param>
+            <returns>The Dialog Result.</returns>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.Show(System.String,System.Boolean,System.String,System.String,System.Object[])">
+            <summary>
+            A Simple message dialog with a CheckBox added.
+            </summary>
+            <param name="check">The Text of the CheckBox to display.</param>
+            <param name="checkState">Define the checkBox checked state.</param>
+            <param name="caption">The title to display.</param>
+            <param name="text">The message to display.</param>
+            <param name="args">Addional arguments for the message.</param>
+            <returns>The Dialog Result.</returns>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.Show(Make_FSELF.Buttons,System.String,System.Boolean,System.String,System.String,System.Object[])">
+            <summary>
+            A Simple message dialog with a CheckBox added.
+            </summary>
+            <param name="button">Define other buttons to use.</param>
+            <param name="check">The Text of the CheckBox to display.</param>
+            <param name="checkState">Define the checkBox checked state.</param>
+            <param name="caption">The title to display.</param>
+            <param name="text">The message to display.</param>
+            <param name="args">Addional arguments for the message.</param>
+            <returns>The Dialog Result.</returns>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.Show(System.Drawing.Image,System.String,System.Object[])">
+            <summary>
+            A Simple message dialog.
+            </summary>
+            <param name="icon">The icon or image to show within the dialog.</param>
+            <param name="text">The message to display.</param>
+            <param name="args">Addional arguments for the message.</param>
+            <returns>The Dialog Result.</returns>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.Show(System.Drawing.Image,System.String,System.String,System.Object[])">
+            <summary>
+            A Simple message dialog.
+            </summary>
+            <param name="icon">The icon or image to show within the dialog.</param>
+            <param name="caption">The title to display.</param>
+            <param name="text">The message to display.</param>
+            <param name="args">Addional arguments for the message.</param>
+            <returns>The Dialog Result.</returns>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.Show(System.Drawing.Image,Make_FSELF.Buttons,System.String,System.String,System.Object[])">
+            <summary>
+            A Simple message dialog.
+            </summary>
+            <param name="icon">The icon or image to show within the dialog.</param>
+            <param name="button">Define other buttons to use.</param>
+            <param name="caption">The title to display.</param>
+            <param name="text">The message to display.</param>
+            <param name="args">Addional arguments for the message.</param>
+            <returns>The Dialog Result.</returns>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.Show(System.Drawing.Image,System.String,System.String,System.String,System.Object[])">
+            <summary>
+            A Simple message dialog with a CheckBox added.
+            </summary>
+            <param name="icon">The icon or image to show within the dialog.</param>
+            <param name="check">The Text of the CheckBox to display.</param>
+            <param name="caption">The title to display.</param>
+            <param name="text">The message to display.</param>
+            <param name="args">Addional arguments for the message.</param>
+            <returns>The Dialog Result.</returns>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.Show(System.Drawing.Image,System.String,System.Boolean,System.String,System.String,System.Object[])">
+            <summary>
+            A Simple message dialog with a CheckBox added.
+            </summary>
+            <param name="icon">The icon or image to show within the dialog.</param>
+            <param name="check">The Text of the CheckBox to display.</param>
+            <param name="checkState">Define the checkBox checked state.</param>
+            <param name="caption">The title to display.</param>
+            <param name="text">The message to display.</param>
+            <param name="args">Addional arguments for the message.</param>
+            <returns>The Dialog Result.</returns>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.Show(System.Drawing.Image,Make_FSELF.Buttons,System.String,System.Boolean,System.String,System.String,System.Object[])">
+            <summary>
+            A Simple message dialog with a CheckBox added.
+            </summary>
+            <param name="icon">The icon or image to show within the dialog.</param>
+            <param name="button">Define other buttons to use.</param>
+            <param name="check">The Text of the CheckBox to display.</param>
+            <param name="checkState">Define the checkBox checked state.</param>
+            <param name="caption">The title to display.</param>
+            <param name="text">The message to display.</param>
+            <param name="args">Addional arguments for the message.</param>
+            <returns>The Dialog Result.</returns>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.Show(System.IO.Stream,System.String,System.Object[])">
+            <summary>
+            A Simple message dialog.
+            </summary>
+            <param name="sound">The sound to play for this dialog.</param>
+            <param name="text">The message to display.</param>
+            <param name="args">Addional arguments for the message.</param>
+            <returns>The Dialog Result.</returns>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.Show(System.IO.Stream,System.String,System.String,System.Object[])">
+            <summary>
+            A Simple message dialog.
+            </summary>
+            <param name="sound">The sound to play for this dialog.</param>
+            <param name="caption">The title to display.</param>
+            <param name="text">The message to display.</param>
+            <param name="args">Addional arguments for the message.</param>
+            <returns>The Dialog Result.</returns>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.Show(System.IO.Stream,Make_FSELF.Buttons,System.String,System.String,System.Object[])">
+            <summary>
+            A Simple message dialog.
+            </summary>
+            <param name="sound">The sound to play for this dialog.</param>
+            <param name="button">Define other buttons to use.</param>
+            <param name="caption">The title to display.</param>
+            <param name="text">The message to display.</param>
+            <param name="args">Addional arguments for the message.</param>
+            <returns>The Dialog Result.</returns>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.Show(System.IO.Stream,System.String,System.String,System.String,System.Object[])">
+            <summary>
+            A Simple message dialog with a CheckBox added.
+            </summary>
+            <param name="sound">The sound to play for this dialog.</param>
+            <param name="check">The Text of the CheckBox to display.</param>
+            <param name="caption">The title to display.</param>
+            <param name="text">The message to display.</param>
+            <param name="args">Addional arguments for the message.</param>
+            <returns>The Dialog Result.</returns>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.Show(System.IO.Stream,System.String,System.Boolean,System.String,System.String,System.Object[])">
+            <summary>
+            A Simple message dialog with a CheckBox added.
+            </summary>
+            <param name="sound">The sound to play for this dialog.</param>
+            <param name="check">The Text of the CheckBox to display.</param>
+            <param name="checkState">Define the checkBox checked state.</param>
+            <param name="caption">The title to display.</param>
+            <param name="text">The message to display.</param>
+            <param name="args">Addional arguments for the message.</param>
+            <returns>The Dialog Result.</returns>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.Show(System.IO.Stream,Make_FSELF.Buttons,System.String,System.Boolean,System.String,System.String,System.Object[])">
+            <summary>
+            A Simple message dialog with a CheckBox added.
+            </summary>
+            <param name="sound">The sound to play for this dialog.</param>
+            <param name="button">Define other buttons to use.</param>
+            <param name="check">The Text of the CheckBox to display.</param>
+            <param name="checkState">Define the checkBox checked state.</param>
+            <param name="caption">The title to display.</param>
+            <param name="text">The message to display.</param>
+            <param name="args">Addional arguments for the message.</param>
+            <returns>The Dialog Result.</returns>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.Show(System.Drawing.Image,System.IO.Stream,System.String,System.Object[])">
+            <summary>
+            A Simple message dialog.
+            </summary>
+            <param name="icon">The icon or image to show within the dialog.</param>
+            <param name="sound">The sound to play for this dialog.</param>
+            <param name="text">The message to display.</param>
+            <param name="args">Addional arguments for the message.</param>
+            <returns>The Dialog Result.</returns>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.Show(System.Drawing.Image,System.IO.Stream,System.String,System.String,System.Object[])">
+            <summary>
+            A Simple message dialog.
+            </summary>
+            <param name="icon">The icon or image to show within the dialog.</param>
+            <param name="sound">The sound to play for this dialog.</param>
+            <param name="caption">The title to display.</param>
+            <param name="text">The message to display.</param>
+            <param name="args">Addional arguments for the message.</param>
+            <returns>The Dialog Result.</returns>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.Show(System.Drawing.Image,System.IO.Stream,Make_FSELF.Buttons,System.String,System.String,System.Object[])">
+            <summary>
+            A Simple message dialog.
+            </summary>
+            <param name="icon">The icon or image to show within the dialog.</param>
+            <param name="sound">The sound to play for this dialog.</param>
+            <param name="button">Define other buttons to use.</param>
+            <param name="caption">The title to display.</param>
+            <param name="text">The message to display.</param>
+            <param name="args">Addional arguments for the message.</param>
+            <returns>The Dialog Result.</returns>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.Show(System.Drawing.Image,System.IO.Stream,System.String,System.String,System.String,System.Object[])">
+            <summary>
+            A Simple message dialog with a CheckBox added.
+            </summary>
+            <param name="icon">The icon or image to show within the dialog.</param>
+            <param name="sound">The sound to play for this dialog.</param>
+            <param name="check">The Text of the CheckBox to display.</param>
+            <param name="caption">The title to display.</param>
+            <param name="text">The message to display.</param>
+            <param name="args">Addional arguments for the message.</param>
+            <returns>The Dialog Result.</returns>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.Show(System.Drawing.Image,System.IO.Stream,System.String,System.Boolean,System.String,System.String,System.Object[])">
+            <summary>
+            A Simple message dialog with a CheckBox added.
+            </summary>
+            <param name="icon">The icon or image to show within the dialog.</param>
+            <param name="sound">The sound to play for this dialog.</param>
+            <param name="check">The Text of the CheckBox to display.</param>
+            <param name="checkState">Define the checkBox checked state.</param>
+            <param name="caption">The title to display.</param>
+            <param name="text">The message to display.</param>
+            <param name="args">Addional arguments for the message.</param>
+            <returns>The Dialog Result.</returns>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.Show(System.Drawing.Image,System.IO.Stream,Make_FSELF.Buttons,System.String,System.Boolean,System.String,System.String,System.Object[])">
+            <summary>
+            A Simple message dialog with a CheckBox added.
+            </summary>
+            <param name="icon">The icon or image to show within the dialog.</param>
+            <param name="sound">The sound to play for this dialog.</param>
+            <param name="button">Define other buttons to use.</param>
+            <param name="check">The Text of the CheckBox to display.</param>
+            <param name="checkState">Define the checkBox checked state.</param>
+            <param name="caption">The title to display.</param>
+            <param name="text">The message to display.</param>
+            <param name="args">Addional arguments for the message.</param>
+            <returns>The Dialog Result.</returns>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.Input(System.String,System.Object[])">
+            <summary>
+            A Input Dialog.
+            </summary>
+            <param name="message">The message to display.</param>
+            <param name="args">Addional arguments for the message.</param>
+            <returns>The Dialog Result.</returns>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.Input(System.String,System.String,System.Object[])">
+             <summary>
+             A Input Dialog.
+             </summary>
+             <param name="message">The message to display.</param>
+             <param name="text">The label Text.</param>
+             <param name="args">Addional arguments for the message.</param>
+            <returns>The Dialog Result.</returns>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.Input(System.String,System.String,System.String,System.Object[])">
+            <summary>
+            A Input Dialog.
+            </summary>
+            <param name="message">The message to display.</param>
+            <param name="text">The label Text.</param>
+            <param name="caption">The Title of the Dialog.</param>
+            <param name="args">Addional arguments for the message.</param>
+            <returns>The Dialog Result.</returns>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.Input(System.String,System.String,System.String,System.String,System.Object[])">
+            <summary>
+            A Input Dialog with a CheckBox added.
+            </summary>
+            <param name="check">The Text of the CheckBox to display.</param>
+            <param name="message">The message to display.</param>
+            <param name="text">The label Text.</param>
+            <param name="caption">The Title of the Dialog.</param>
+            <param name="args">Addional arguments for the message.</param>
+            <returns>The Dialog Result.</returns>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.Input(System.String,System.Boolean,System.String,System.String,System.String,System.Object[])">
+            <summary>
+            A Input Dialog with a CheckBox added.
+            </summary>
+            <param name="check">The Text of the CheckBox to display.</param>
+            <param name="CheckState">Define the checkBox checked state.</param>
+            <param name="message">The message to display.</param>
+            <param name="text">The label Text.</param>
+            <param name="caption">The Title of the Dialog.</param>
+            <param name="args">Addional arguments for the message.</param>
+            <returns>The Dialog Result.</returns>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.Error(System.String,System.String,System.Object[])">
+            <summary>
+            Show a error dialog, specifing a title.
+            </summary>
+            <param name="title">The Title of hte MessageBox Dialog.</param>
+            <param name="message">The message to show.</param>
+            <param name="args">Addional arguments for the message.</param>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.Error(System.String,System.Object[])">
+            <summary>
+            Show a error dialog, specifing a title.
+            </summary>
+            <param name="message">The message to show.</param>
+            <param name="args">Addional arguments for the message.</param>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.Error(Make_FSELF.Buttons,System.String,System.String,System.Object[])">
+            <summary>
+            Show a error dialog, specifing a title.
+            </summary>
+            <param name="button">Define other buttons to use.</param>
+            <param name="title">The Title of hte MessageBox Dialog.</param>
+            <param name="message">The message to show.</param>
+            <param name="args">Addional arguments for the message.</param>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.Error(Make_FSELF.Buttons,System.String,System.Object[])">
+            <summary>
+            Show a error dialog, specifing a title.
+            </summary>
+            <param name="button">Define other buttons to use.</param>
+            <param name="message">The message to show.</param>
+            <param name="args">Addional arguments for the message.</param>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.Info(System.String,System.String,System.Object[])">
+            <summary>
+            Show a info dialog, specifing a title.
+            </summary>
+            <param name="title">The Title of hte MessageBox Dialog.</param>
+            <param name="message">The message to show.</param>
+            <param name="args">Addional arguments for the message.</param>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.Info(System.String,System.Object[])">
+            <summary>
+            Show a info dialog.
+            </summary>
+            <param name="message">The message to show.</param>
+            /// <param name="args">Addional arguments for the message.</param>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.Info(Make_FSELF.Buttons,System.String,System.String,System.Object[])">
+            <summary>
+            Show a info dialog, specifing a title.
+            </summary>
+            <param name="button">Define other buttons to use.</param>
+            <param name="title">The Title of hte MessageBox Dialog.</param>
+            <param name="message">The message to show.</param>
+            <param name="args">Addional arguments for the message.</param>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.Info(Make_FSELF.Buttons,System.String,System.Object[])">
+            <summary>
+            Show a info dialog.
+            </summary>
+            <param name="button">Define other buttons to use.</param>
+            <param name="message">The message to show.</param>
+            <param name="args">Addional arguments for the message.</param>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.Warning(System.String,System.String,System.Object[])">
+            <summary>
+            Show a warning, specifing a title.
+            </summary>
+            <param name="title">The Title of hte MessageBox Dialog.</param>
+            <param name="message">The message to show.</param>
+            /// <param name="args">Addional arguments for the message.</param>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.Warning(System.String,System.Object[])">
+            <summary>
+            Show a warning.
+            </summary>
+            <param name="message">The message to show.</param>
+            /// <param name="args">Addional arguments for the message.</param>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.Warning(Make_FSELF.Buttons,System.String,System.String,System.Object[])">
+            <summary>
+            Show a warning, specifing a title.
+            </summary>
+            <param name="button">Buttons to use.</param>
+            <param name="title">The Title of hte MessageBox Dialog.</param>
+            <param name="message">The message to show.</param>
+            <param name="args">Addional arguments for the message.</param>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.Warning(Make_FSELF.Buttons,System.String,System.Object[])">
+            <summary>
+            Show a warning.
+            </summary>
+            <param name="button">Buttons to use.</param>
+            <param name="message">The message to show.</param>
+            <param name="args">Addional arguments for the message.</param>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.Question(System.String,System.String,System.Object[])">
+            <summary>
+            Show a Question dialog, specifing a title.
+            </summary>
+            <param name="title">The Title of hte MessageBox Dialog.</param>
+            <param name="message">The message to show.</param>
+            /// <param name="args">Addional arguments for the message.</param>
+            <returns>The Dialog Result.</returns>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.Question(System.String,System.Object[])">
+            <summary>
+            Show a Question dialog.
+            </summary>
+            <param name="message">The message to show.</param>
+            <param name="args">Addional arguments for the message.</param>
+            <returns>The Dialog Result.</returns>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.Question(Make_FSELF.Buttons,System.String,System.String,System.Object[])">
+            <summary>
+            Show a question dialog, specifing a title, with 3 buttons, Yes, No and Cancel.
+            </summary>
+            <param name="button">Buttons to use.</param>
+            <param name="title">The Title of hte MessageBox Dialog.</param>
+            <param name="message">The message to show.</param>
+            <param name="args">Addional arguments for the message.</param>
+            <returns>The Dialog Result.</returns>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.Question(Make_FSELF.Buttons,System.String,System.Object[])">
+            <summary>
+            Show a question dialog with 3 buttons, Yes, No and Cancel.
+            </summary>
+            <param name="button">Buttons to use.</param>
+            <param name="message">The message to show.</param>
+            <param name="args">Addional arguments for the message.</param>
+            <returns>The Dialog Result.</returns>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.Debug(System.String,System.Object[])">
+            <summary>
+            Show a Debug Message.
+            </summary>
+            <param name="message">The Message to display.</param>
+            <param name="args">Addional arguments for the message.</param>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.Debug(System.String,System.String,System.Object[])">
+            <summary>
+            Show a Debug Message.
+            </summary>
+            <param name="caption">A Title for the Message.</param>
+            <param name="message">The Message to display.</param>
+            <param name="args">Addional arguments for the message.</param>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.ShowOpenFile(System.String,System.String,System.String)">
+            <summary>
+            Show a basic OpenFile Dialog, specifing a tile and/or a initial directory.
+            </summary>
+            <param name="title">The Title to display.</param>
+            <param name="filter">The file filter to use as string.</param>
+            <param name="initialDirectory">The initial directory to sue for this dialog.</param>
+            <returns>The user input as string or a empty string.</returns>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.ShowOpenFile(System.String,System.String,System.String,System.String)">
+            <summary>
+            Show a basic OpenFile Dialog, specifing a tile and/or a initial directory.
+            </summary>
+            <param name="title">The Title to display.</param>
+            <param name="filter">The file filter to use as string.</param>
+            <param name="name">The name for the file to display.</param>
+            <param name="initialDirectory">The initial directory to sue for this dialog.</param>
+            <returns>The user input as string or a empty string.</returns>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.ShowOpenFile">
+            <summary>
+            Show a basic OpenFile Dialog.
+            </summary>
+            <returns>The user input as string or a empty string.</returns>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.ShowOpenFile(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Show a basic OpenFile Dialog, specifing a tile and/or a initial directory.
+            </summary>
+            <param name="title">The Title to display.</param>
+            <param name="filter">The file filter to use as string.</param>
+            <param name="initialDirectory">The initial directory to sue for this dialog.</param>
+            <param name="selectMultiple">Used to determine that this is a multifile dialog.</param>
+            <returns>The user input as string array or a empty string[].</returns>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.ShowOpenFile(System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Show a basic OpenFile Dialog, specifing a tile and/or a initial directory.
+            </summary>
+            <param name="title">The Title to display.</param>
+            <param name="filter">The file filter to use as string.</param>
+            <param name="name">The name for the file to display.</param>
+            <param name="initialDirectory">The initial directory to sue for this dialog.</param>
+            <param name="selectMultiple">Used to determine that this is a multifile dialog.</param>
+            <returns>The user input as string array or a empty string[].</returns>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.ShowOpenFile(System.Boolean)">
+            <summary>
+            Show a basic OpenFile Dialog, specifing a tile and/or a initial directory.
+            </summary>
+            <param name="selectMultiple">Used to determine that this is a multifile dialog.</param>
+            <returns>The user input as string array or a empty string[].</returns>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.ShowSaveFile(System.String,System.String,System.String)">
+            <summary>
+            Show a basic SaveFile Dialog, speciging a title.
+            </summary>
+            <param name="title">The Title of the MessageBox Dialog.</param>
+            <param name="filter">The file filter to use.</param>
+            <param name="initialDirectory">The root directory to display.</param>
+            <returns>The Dialog Result.</returns>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.ShowSaveFile">
+            <summary>
+            Show a basic SaveFile Dialog.
+            </summary>
+            <returns>The Dialog Result.</returns>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.ShowFolderBrowse(System.String,System.String)">
+            <summary>
+            A simple FolderBrowseDialog, specifing a tile and/or a initial directory.
+            </summary>
+            <param name="title">The Title to display.</param>
+            <param name="initialDirectory">The initial directory to sue for this dialog.</param>
+            <returns>The user input as string or a empty string.</returns>
+        </member>
+        <member name="M:Make_FSELF.MessagBox.ShowFolderBrowse">
+            <summary>
+            A simple FolderBrowseDialog, specifing a tile.
+            </summary>
+            <returns>The user input as string or a empty string.</returns>
+        </member>
+    </members>
+</doc>

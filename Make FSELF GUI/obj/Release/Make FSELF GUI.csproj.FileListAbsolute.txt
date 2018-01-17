@@ -1,0 +1,21 @@
+C:\Coding\Make FSELF\Make FSELF\bin\Release\Make FSELF_GUI.exe.config
+C:\Coding\Make FSELF\Make FSELF\bin\Release\Make FSELF_GUI.xml
+C:\Coding\Make FSELF\Make FSELF\bin\Release\Make FSELF_GUI.exe
+C:\Coding\Make FSELF\Make FSELF\bin\Release\Make FSELF_GUI.pdb
+C:\Coding\Make FSELF\Make FSELF\obj\Release\Make_FSELF.Make_FSELF_GUI.resources
+C:\Coding\Make FSELF\Make FSELF\obj\Release\Make_FSELF_GUI.Properties.Resources.resources
+C:\Coding\Make FSELF\Make FSELF\obj\Release\Make FSELF GUI.csproj.GenerateResource.Cache
+C:\Coding\Make FSELF\Make FSELF\obj\Release\Make FSELF GUI.csproj.CoreCompileInputs.cache
+C:\Coding\Make FSELF\Make FSELF\obj\Release\Make FSELF_GUI.exe
+C:\Coding\Make FSELF\Make FSELF\obj\Release\Make FSELF_GUI.pdb
+C:\Coding\Make FSELF\Make FSELF\obj\Release\Make FSELF GUI.csprojResolveAssemblyReference.cache
+C:\Coding\Make FSELF GUI\Make FSELF GUI\bin\Release\Make FSELF_GUI.exe.config
+C:\Coding\Make FSELF GUI\Make FSELF GUI\bin\Release\Make FSELF_GUI.xml
+C:\Coding\Make FSELF GUI\Make FSELF GUI\bin\Release\Make FSELF_GUI.exe
+C:\Coding\Make FSELF GUI\Make FSELF GUI\bin\Release\Make FSELF_GUI.pdb
+C:\Coding\Make FSELF GUI\Make FSELF GUI\obj\Release\Make_FSELF.Make_FSELF_GUI.resources
+C:\Coding\Make FSELF GUI\Make FSELF GUI\obj\Release\Make_FSELF_GUI.Properties.Resources.resources
+C:\Coding\Make FSELF GUI\Make FSELF GUI\obj\Release\Make FSELF GUI.csproj.GenerateResource.Cache
+C:\Coding\Make FSELF GUI\Make FSELF GUI\obj\Release\Make FSELF GUI.csproj.CoreCompileInputs.cache
+C:\Coding\Make FSELF GUI\Make FSELF GUI\obj\Release\Make FSELF_GUI.exe
+C:\Coding\Make FSELF GUI\Make FSELF GUI\obj\Release\Make FSELF_GUI.pdb
