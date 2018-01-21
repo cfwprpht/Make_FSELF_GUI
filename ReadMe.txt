@@ -23,4 +23,9 @@ Make sure to have the Authentication Information in one Block without spaces and
 
 Done, Have Fun !
 
+Changelog: v1.1
+Corrected a bug in the db reading routine which would cause the reading process to stop if there is a second app entry for a fw version.
+Added "Only Fake Sign" mode which just use standart make_fself.py settings without any change.
+Added the ps2-emu Authentication Information base (0x0000 for decimal) to the database.
+
  -cfwprpht-
