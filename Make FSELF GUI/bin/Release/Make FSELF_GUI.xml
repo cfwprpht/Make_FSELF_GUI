@@ -246,6 +246,16 @@
             Draw GUI in normal mode.
             </summary>
         </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.GuiFake">
+            <summary>
+            Draw Gui in Only Fake Sign mode.
+            </summary>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.DeactivateToolAndContext">
+            <summary>
+            Deactivate all Tool and Context menu strips.
+            </summary>
+        </member>
         <member name="M:Make_FSELF.Make_FSELF_GUI.TreeView">
             <summary>
             Change the File Window to TreeView.
@@ -439,6 +449,20 @@
             <param name="sender">The Sender.</param>
             <param name="e">The Event Arguments.</param>
         </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.BatchFakeToolStrip_Click(System.Object,System.EventArgs)">
+            <summary>
+            On Menu Strip Only Fake Sign > Batch click.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.NormalFakeToolStrip_Click(System.Object,System.EventArgs)">
+            <summary>
+            On Menu Strip Only Fake Sign > Normal click.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
         <member name="M:Make_FSELF.Make_FSELF_GUI.SetMFSELFToolStrip_Click(System.Object,System.EventArgs)">
             <summary>
             Set a path to make_fself.py script.
@@ -575,6 +599,20 @@
         <member name="M:Make_FSELF.Make_FSELF_GUI.BatchAContextMenu_Click(System.Object,System.EventArgs)">
             <summary>
             On Context Menu Modus Advanced Batch click do.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.NormalFakeContextMenu_Click(System.Object,System.EventArgs)">
+            <summary>
+            On Context Menu Modus Only Fake sign Normal click do.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.BatchFakeContextMenu_Click(System.Object,System.EventArgs)">
+            <summary>
+            On Context Menu Modus Only Fake sign Batch click do.
             </summary>
             <param name="sender">The Sender.</param>
             <param name="e">The Event Arguments.</param>
@@ -718,6 +756,13 @@
             </summary>
             <param name="sender">The Sender.</param>
             <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.OnlyFakeSignContextMenu_Click(System.Object,System.EventArgs)">
+            <summary>
+            On Only Fake Sign Menu Context click do.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
         </member>
         <member name="M:Make_FSELF.Make_FSELF_GUI.Make_FSELF_GUI_FormClosing(System.Object,System.Windows.Forms.FormClosingEventArgs)">
             <summary>

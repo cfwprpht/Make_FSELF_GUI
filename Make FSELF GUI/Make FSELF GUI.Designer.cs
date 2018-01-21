@@ -43,6 +43,9 @@
             this.advancedToolStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.normalAdvancedToolStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.batchAdvancedToolStrip = new System.Windows.Forms.ToolStripMenuItem();
+            this.onlyFakeSignToolStrip = new System.Windows.Forms.ToolStripMenuItem();
+            this.normalFakeToolStrip = new System.Windows.Forms.ToolStripMenuItem();
+            this.batchFakeToolStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.PathsToolStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.MFSELFPYToolStrip = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,6 +66,7 @@
             this.x8ToolStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.x16ToolStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.hexifyAuthInfoToolStrip = new System.Windows.Forms.ToolStripMenuItem();
+            this.pythonCallToolStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStrip1 = new System.Windows.Forms.ToolStripMenuItem();
             this.labelcfwprpht = new System.Windows.Forms.Label();
@@ -101,6 +105,9 @@
             this.advancedContextMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.normalAContextMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.batchAContextMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.onlyFakeSignContextMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.normalFakeContextMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.batchFakeContextMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsContextMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.pathsContextMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.makefselfpyContextMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -121,10 +128,9 @@
             this.x8ContextMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.x16ContextMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.hexifyAuthInfoContextMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.pythonCallContextMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutContextMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.closeContextMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.pythonCallToolStrip = new System.Windows.Forms.ToolStripMenuItem();
-            this.pythonCallContextMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.contextRtb.SuspendLayout();
             this.groupAdvanced.SuspendLayout();
@@ -222,7 +228,8 @@
             // 
             this.modusToolStrip.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.normalToolStrip,
-            this.advancedToolStrip});
+            this.advancedToolStrip,
+            this.onlyFakeSignToolStrip});
             this.modusToolStrip.Image = ((System.Drawing.Image)(resources.GetObject("modusToolStrip.Image")));
             this.modusToolStrip.Name = "modusToolStrip";
             this.modusToolStrip.Size = new System.Drawing.Size(72, 20);
@@ -279,6 +286,31 @@
             this.batchAdvancedToolStrip.Size = new System.Drawing.Size(114, 22);
             this.batchAdvancedToolStrip.Text = "Batch";
             this.batchAdvancedToolStrip.Click += new System.EventHandler(this.BatchAdvancedToolStrip_Click);
+            // 
+            // onlyFakeSignToolStrip
+            // 
+            this.onlyFakeSignToolStrip.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.normalFakeToolStrip,
+            this.batchFakeToolStrip});
+            this.onlyFakeSignToolStrip.Name = "onlyFakeSignToolStrip";
+            this.onlyFakeSignToolStrip.Size = new System.Drawing.Size(152, 22);
+            this.onlyFakeSignToolStrip.Text = "Only Fake Sign";
+            // 
+            // normalFakeToolStrip
+            // 
+            this.normalFakeToolStrip.Image = ((System.Drawing.Image)(resources.GetObject("normalFakeToolStrip.Image")));
+            this.normalFakeToolStrip.Name = "normalFakeToolStrip";
+            this.normalFakeToolStrip.Size = new System.Drawing.Size(114, 22);
+            this.normalFakeToolStrip.Text = "Normal";
+            this.normalFakeToolStrip.Click += new System.EventHandler(this.NormalFakeToolStrip_Click);
+            // 
+            // batchFakeToolStrip
+            // 
+            this.batchFakeToolStrip.Image = ((System.Drawing.Image)(resources.GetObject("batchFakeToolStrip.Image")));
+            this.batchFakeToolStrip.Name = "batchFakeToolStrip";
+            this.batchFakeToolStrip.Size = new System.Drawing.Size(114, 22);
+            this.batchFakeToolStrip.Text = "Batch";
+            this.batchFakeToolStrip.Click += new System.EventHandler(this.BatchFakeToolStrip_Click);
             // 
             // optionsToolStrip
             // 
@@ -459,6 +491,14 @@
             this.hexifyAuthInfoToolStrip.Size = new System.Drawing.Size(168, 22);
             this.hexifyAuthInfoToolStrip.Text = "Hexify Auth Info";
             this.hexifyAuthInfoToolStrip.Click += new System.EventHandler(this.HexifyAuthInfoToolStrip_Click);
+            // 
+            // pythonCallToolStrip
+            // 
+            this.pythonCallToolStrip.Image = ((System.Drawing.Image)(resources.GetObject("pythonCallToolStrip.Image")));
+            this.pythonCallToolStrip.Name = "pythonCallToolStrip";
+            this.pythonCallToolStrip.Size = new System.Drawing.Size(168, 22);
+            this.pythonCallToolStrip.Text = "Python Call Script";
+            this.pythonCallToolStrip.Click += new System.EventHandler(this.PythonCallToolStrip_Click);
             // 
             // aboutToolStrip
             // 
@@ -798,7 +838,8 @@
             // 
             this.modusContextMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.normalContextMenu,
-            this.advancedContextMenu});
+            this.advancedContextMenu,
+            this.onlyFakeSignContextMenu});
             this.modusContextMenu.Image = ((System.Drawing.Image)(resources.GetObject("modusContextMenu.Image")));
             this.modusContextMenu.Name = "modusContextMenu";
             this.modusContextMenu.Size = new System.Drawing.Size(116, 22);
@@ -811,7 +852,7 @@
             this.batchNContextMenu});
             this.normalContextMenu.Image = ((System.Drawing.Image)(resources.GetObject("normalContextMenu.Image")));
             this.normalContextMenu.Name = "normalContextMenu";
-            this.normalContextMenu.Size = new System.Drawing.Size(127, 22);
+            this.normalContextMenu.Size = new System.Drawing.Size(152, 22);
             this.normalContextMenu.Text = "Normal";
             // 
             // normalNContextMenu
@@ -837,7 +878,7 @@
             this.batchAContextMenu});
             this.advancedContextMenu.Image = ((System.Drawing.Image)(resources.GetObject("advancedContextMenu.Image")));
             this.advancedContextMenu.Name = "advancedContextMenu";
-            this.advancedContextMenu.Size = new System.Drawing.Size(127, 22);
+            this.advancedContextMenu.Size = new System.Drawing.Size(152, 22);
             this.advancedContextMenu.Text = "Advanced";
             // 
             // normalAContextMenu
@@ -855,6 +896,31 @@
             this.batchAContextMenu.Size = new System.Drawing.Size(114, 22);
             this.batchAContextMenu.Text = "Batch";
             this.batchAContextMenu.Click += new System.EventHandler(this.BatchAContextMenu_Click);
+            // 
+            // onlyFakeSignContextMenu
+            // 
+            this.onlyFakeSignContextMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.normalFakeContextMenu,
+            this.batchFakeContextMenu});
+            this.onlyFakeSignContextMenu.Name = "onlyFakeSignContextMenu";
+            this.onlyFakeSignContextMenu.Size = new System.Drawing.Size(152, 22);
+            this.onlyFakeSignContextMenu.Text = "Only Fake Sign";
+            // 
+            // normalFakeContextMenu
+            // 
+            this.normalFakeContextMenu.Image = ((System.Drawing.Image)(resources.GetObject("normalFakeContextMenu.Image")));
+            this.normalFakeContextMenu.Name = "normalFakeContextMenu";
+            this.normalFakeContextMenu.Size = new System.Drawing.Size(114, 22);
+            this.normalFakeContextMenu.Text = "Normal";
+            this.normalFakeContextMenu.Click += new System.EventHandler(this.NormalFakeContextMenu_Click);
+            // 
+            // batchFakeContextMenu
+            // 
+            this.batchFakeContextMenu.Image = ((System.Drawing.Image)(resources.GetObject("batchFakeContextMenu.Image")));
+            this.batchFakeContextMenu.Name = "batchFakeContextMenu";
+            this.batchFakeContextMenu.Size = new System.Drawing.Size(114, 22);
+            this.batchFakeContextMenu.Text = "Batch";
+            this.batchFakeContextMenu.Click += new System.EventHandler(this.BatchFakeContextMenu_Click);
             // 
             // optionsContextMenu
             // 
@@ -1036,6 +1102,14 @@
             this.hexifyAuthInfoContextMenu.Text = "Hexify Auth Info";
             this.hexifyAuthInfoContextMenu.Click += new System.EventHandler(this.HexifyAuthInfoContextMenu_Click);
             // 
+            // pythonCallContextMenu
+            // 
+            this.pythonCallContextMenu.Image = ((System.Drawing.Image)(resources.GetObject("pythonCallContextMenu.Image")));
+            this.pythonCallContextMenu.Name = "pythonCallContextMenu";
+            this.pythonCallContextMenu.Size = new System.Drawing.Size(168, 22);
+            this.pythonCallContextMenu.Text = "Python Call Script";
+            this.pythonCallContextMenu.Click += new System.EventHandler(this.PythonCallContextMenu_Click);
+            // 
             // aboutContextMenu
             // 
             this.aboutContextMenu.Image = ((System.Drawing.Image)(resources.GetObject("aboutContextMenu.Image")));
@@ -1051,22 +1125,6 @@
             this.closeContextMenu.Size = new System.Drawing.Size(116, 22);
             this.closeContextMenu.Text = "Close";
             this.closeContextMenu.Click += new System.EventHandler(this.CloseContextMenu_Click);
-            // 
-            // pythonCallToolStrip
-            // 
-            this.pythonCallToolStrip.Image = ((System.Drawing.Image)(resources.GetObject("pythonCallToolStrip.Image")));
-            this.pythonCallToolStrip.Name = "pythonCallToolStrip";
-            this.pythonCallToolStrip.Size = new System.Drawing.Size(168, 22);
-            this.pythonCallToolStrip.Text = "Python Call Script";
-            this.pythonCallToolStrip.Click += new System.EventHandler(this.PythonCallToolStrip_Click);
-            // 
-            // pythonCallContextMenu
-            // 
-            this.pythonCallContextMenu.Image = ((System.Drawing.Image)(resources.GetObject("pythonCallContextMenu.Image")));
-            this.pythonCallContextMenu.Name = "pythonCallContextMenu";
-            this.pythonCallContextMenu.Size = new System.Drawing.Size(168, 22);
-            this.pythonCallContextMenu.Text = "Python Call Script";
-            this.pythonCallContextMenu.Click += new System.EventHandler(this.PythonCallContextMenu_Click);
             // 
             // Make_FSELF_GUI
             // 
@@ -1207,6 +1265,12 @@
         private System.Windows.Forms.GroupBox groupInfo;
         private System.Windows.Forms.ToolStripMenuItem pythonCallToolStrip;
         private System.Windows.Forms.ToolStripMenuItem pythonCallContextMenu;
+        private System.Windows.Forms.ToolStripMenuItem onlyFakeSignToolStrip;
+        private System.Windows.Forms.ToolStripMenuItem onlyFakeSignContextMenu;
+        private System.Windows.Forms.ToolStripMenuItem normalFakeToolStrip;
+        private System.Windows.Forms.ToolStripMenuItem batchFakeToolStrip;
+        private System.Windows.Forms.ToolStripMenuItem normalFakeContextMenu;
+        private System.Windows.Forms.ToolStripMenuItem batchFakeContextMenu;
     }
 }
 

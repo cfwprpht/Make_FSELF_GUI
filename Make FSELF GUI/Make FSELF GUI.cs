@@ -152,40 +152,40 @@ namespace Make_FSELF {
                 bool app, auth, fw;
                 app = auth = fw = false;
                 foreach (string line in dbPath.ReadAllLines()) {
-                    if (line.Contains("[FW=", ignore)) {
-                        if (Fws.Count > 0 && app) {
-                            MessagBox.Error("DataBase Inconsistent !");
-                            break;
-                        }
+                    if (!string.IsNullOrEmpty(line)) {
+                        if (line.Contains("[FW=", ignore)) {
+                            if (Fws.Count > 0 && app) { MessagBox.Error("DataBase Inconsistent !"); break; }
 
-                        string[] tag = line.Split(']');
-                        Fws.Add(tag[0].XReplace(@"[[]FW=?", string.Empty, RegexOptions.IgnoreCase));
-                        fw = true;
-                        if (Fws.Count > 1) {
-                            _Apps.Add(_apps.ToArray());
-                            _Auths.Add(_auths.ToArray());
-                            _apps = new List<string>();
-                            _auths = new List<string>();
-                        }
+                            string[] tag = line.Split(']');
+                            Fws.Add(tag[0].XReplace(@"[[]FW=?", string.Empty, RegexOptions.IgnoreCase));
+                            fw = true;
+                            if (Fws.Count > 1) {
+                                _Apps.Add(_apps.ToArray());
+                                _Auths.Add(_auths.ToArray());
+                                _apps = new List<string>();
+                                _auths = new List<string>();
+                            }
 
-                    } else if (line.Contains("[Name=", ignore)) {
-                        if (!fw) {
-                            if (!auth) MessagBox.Error("DataBase Inconsistent !"); break;
-                        }
+                        } else if (line.Contains("[Name=", ignore)) {
+                            if (!fw) {
+                                if (!auth) { MessagBox.Error("DataBase Inconsistent !"); break; }
+                            }
 
-                        string[] tag = line.Split(']');
-                        _apps.Add(tag[0].XReplace(@"[[]Name=?\s?", string.Empty, RegexOptions.IgnoreCase));
-                        auth = fw = false;
-                        app = true;
-                    } else if (line.Contains("[Auth=", ignore)) {
-                        if (!app) {
-                            if (fw) MessagBox.Error("DataBase Inconsistent !"); break;
-                        }
+                            string[] tag = line.Split(']');
+                            _apps.Add(tag[0].XReplace(@"[[]Name=?\s?", string.Empty, RegexOptions.IgnoreCase));
+                            MessagBox.Debug(tag[0].XReplace(@"[[]Name=?\s?", string.Empty, RegexOptions.IgnoreCase));
+                            auth = fw = false;
+                            app = true;
+                        } else if (line.Contains("[Auth=", ignore)) {
+                            if (!app) {
+                                if (fw) { MessagBox.Error("DataBase Inconsistent !"); break; }
+                            }
 
-                        string[] tag = line.Split(']');
-                        _auths.Add(tag[0].XReplace(@"[[]Auth=?", string.Empty, RegexOptions.IgnoreCase));
-                        app = false;
-                        auth = true;
+                            string[] tag = line.Split(']');
+                            _auths.Add(tag[0].XReplace(@"[[]Auth=?", string.Empty, RegexOptions.IgnoreCase));
+                            app = false;
+                            auth = true;
+                        }
                     }
                 }
 
@@ -207,7 +207,7 @@ namespace Make_FSELF {
         /// Draw GUI in advanced mode.
         /// </summary>
         private void GuiAdvanced() {
-            groupVersion.Visible = textBoxPaid.Visible = comboType.Visible = labelPaid.Visible = labelType.Visible = true;
+            groupAdvanced.Visible = groupVersion.Visible = textBoxPaid.Visible = comboType.Visible = labelPaid.Visible = labelType.Visible = true;
             groupAdvanced.Text = "Advanced Options";
             ClientSize = new Size(618, 713);
         }
@@ -216,9 +216,28 @@ namespace Make_FSELF {
         /// Draw GUI in normal mode.
         /// </summary>
         private void GuiNormal() {
+            groupAdvanced.Visible = true;
             groupVersion.Visible = textBoxPaid.Visible = comboType.Visible = labelPaid.Visible = labelType.Visible = false;
             groupAdvanced.Text = "Normal Options";
             ClientSize = new Size(618, 686);
+        }
+
+        /// <summary>
+        /// Draw Gui in Only Fake Sign mode.
+        /// </summary>
+        private void GuiFake() {
+            groupAdvanced.Visible = false;
+            ClientSize = new Size(618, 504);
+        }
+
+        /// <summary>
+        /// Deactivate all Tool and Context menu strips.
+        /// </summary>
+        private void DeactivateToolAndContext() {
+            batchFakeToolStrip.Checked = batchFakeContextMenu.Checked = normalAdvancedToolStrip.Checked = normalNormalToolStrip.Checked = batchAdvancedToolStrip.Checked = batchNormalToolStrip.Checked = false;
+            normalFakeToolStrip.Checked = normalFakeContextMenu.Checked = normalNContextMenu.Checked = normalAContextMenu.Checked = batchNContextMenu.Checked = batchAContextMenu.Checked = false;
+            batchFakeToolStrip.Enabled = batchFakeContextMenu.Enabled = normalAdvancedToolStrip.Enabled = normalNormalToolStrip.Enabled = batchAdvancedToolStrip.Enabled = batchNormalToolStrip.Enabled = true;
+            normalFakeToolStrip.Enabled = normalFakeContextMenu.Enabled = normalNContextMenu.Enabled = normalAContextMenu.Enabled = batchNContextMenu.Enabled = batchAContextMenu.Enabled = true;
         }
 
         /// <summary>
@@ -227,10 +246,7 @@ namespace Make_FSELF {
         private void TreeView() {
             treeView.Visible = tree = true;
             richTextBox.Visible = false;
-            normalAdvancedToolStrip.Checked = normalNormalToolStrip.Checked = batchAdvancedToolStrip.Checked = batchNormalToolStrip.Checked = false;
-            normalNContextMenu.Checked = normalAContextMenu.Checked = batchNContextMenu.Checked = batchAContextMenu.Checked = false;
-            normalAdvancedToolStrip.Enabled = normalNormalToolStrip.Enabled = batchAdvancedToolStrip.Enabled = batchNormalToolStrip.Enabled = true;
-            normalNContextMenu.Enabled = normalAContextMenu.Enabled = batchNContextMenu.Enabled = batchAContextMenu.Enabled = true;
+            DeactivateToolAndContext();
         }
 
         /// <summary>
@@ -239,10 +255,7 @@ namespace Make_FSELF {
         private void BatchView() {
             treeView.Visible = tree = false;
             richTextBox.Visible = true;
-            normalAdvancedToolStrip.Checked = normalNormalToolStrip.Checked = batchAdvancedToolStrip.Checked = batchNormalToolStrip.Checked = false;
-            normalNContextMenu.Checked = normalAContextMenu.Checked = batchNContextMenu.Checked = batchAContextMenu.Checked = false;
-            normalAdvancedToolStrip.Enabled = normalNormalToolStrip.Enabled = batchAdvancedToolStrip.Enabled = batchNormalToolStrip.Enabled = true;
-            normalNContextMenu.Enabled = normalAContextMenu.Enabled = batchNContextMenu.Enabled = batchAContextMenu.Enabled = true;
+            DeactivateToolAndContext();
         }
 
         /// <summary>
@@ -276,7 +289,6 @@ namespace Make_FSELF {
             byte1ToolStrip.Enabled = byte2ToolStrip.Enabled = byte4ToolStrip.Enabled = byte8ToolStrip.Enabled = byte16ToolStrip.Enabled = true;
             b1ContextMenu.Enabled = b2ContextMenu.Enabled = b4ContextMenu.Enabled = b8ContextMenu.Enabled = b16ContextMenu.Enabled = false;
         }
-
         
         /// <summary>
         /// Get the User Choosen Byte Allign.
@@ -595,6 +607,30 @@ namespace Make_FSELF {
         }
 
         /// <summary>
+        /// On Menu Strip Only Fake Sign > Batch click.
+        /// </summary>
+        /// <param name="sender">The Sender.</param>
+        /// <param name="e">The Event Arguments.</param>
+        private void BatchFakeToolStrip_Click(object sender, EventArgs e) {
+            BatchView();
+            batchFakeToolStrip.Checked = batchFakeContextMenu.Checked = true;
+            batchFakeToolStrip.Enabled = batchFakeContextMenu.Enabled = false;
+            if (!normalFakeToolStrip.Checked || !normalFakeContextMenu.Checked) GuiFake();
+        }
+
+        /// <summary>
+        /// On Menu Strip Only Fake Sign > Normal click.
+        /// </summary>
+        /// <param name="sender">The Sender.</param>
+        /// <param name="e">The Event Arguments.</param>
+        private void NormalFakeToolStrip_Click(object sender, EventArgs e) {
+            TreeView();
+            normalFakeToolStrip.Checked = normalFakeContextMenu.Checked = true;
+            normalFakeToolStrip.Enabled = normalFakeContextMenu.Enabled = false;
+            if (!batchFakeToolStrip.Checked || !batchFakeContextMenu.Checked) GuiFake();
+        }
+        
+        /// <summary>
         /// Set a path to make_fself.py script.
         /// </summary>
         /// <param name="sender">The Sender.</param>
@@ -801,6 +837,20 @@ namespace Make_FSELF {
         private void BatchAContextMenu_Click(object sender, EventArgs e) { batchAdvancedToolStrip.PerformClick(); }
 
         /// <summary>
+        /// On Context Menu Modus Only Fake sign Normal click do.
+        /// </summary>
+        /// <param name="sender">The Sender.</param>
+        /// <param name="e">The Event Arguments.</param>
+        private void NormalFakeContextMenu_Click(object sender, EventArgs e) { normalFakeToolStrip.PerformClick(); }
+
+        /// <summary>
+        /// On Context Menu Modus Only Fake sign Batch click do.
+        /// </summary>
+        /// <param name="sender">The Sender.</param>
+        /// <param name="e">The Event Arguments.</param>
+        private void BatchFakeContextMenu_Click(object sender, EventArgs e) { batchFakeToolStrip.PerformClick(); }
+
+        /// <summary>
         /// On Context Menu Set make_fself.py click do.
         /// </summary>
         /// <param name="sender">The Sender.</param>
@@ -944,6 +994,13 @@ namespace Make_FSELF {
         private void PythonCallContextMenu_Click(object sender, EventArgs e) { pythonCallToolStrip.PerformClick(); }
 
         /// <summary>
+        /// On Only Fake Sign Menu Context click do.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnlyFakeSignContextMenu_Click(object sender, EventArgs e) { onlyFakeSignToolStrip.PerformClick(); }
+
+        /// <summary>
         /// On Closing of Form.
         /// </summary>
         /// <param name="sender">The Sender.</param>
@@ -991,27 +1048,29 @@ namespace Make_FSELF {
             // Prepare for Script call.
             batchCounter = 0;
             string args = string.Empty;
-            if (normalAdvancedToolStrip.Checked || batchAdvancedToolStrip.Checked) {
-                if (textBoxPaid.Text != string.Empty) args += "--paid " + textBoxPaid.Text + " ";
-                else MessagBox.Error("Program Authentication ID is empty !");
-                if (comboType.SelectedIndex > -1) args += "--ptype " + (comboType.SelectedItem.ToString().Replace(" ", "")) + " ";
-                else MessagBox.Error("No Program Type selected !");
-                if (textBoxAppVersion.Text != string.Empty) args += "--app-version " + textBoxAppVersion.Text + " ";
-                else MessagBox.Error("Application version is empty !");
-                if (textBoxFWVersion.Text != string.Empty) args += "--fw-version " + textBoxFWVersion.Text + " ";
-                else MessagBox.Error("Firmware version is empty !");
-                if (rtbAuthInfo.Text != string.Empty) {
-                    if (hexifyAuthInfoToolStrip.Checked) args += "--auth-info " + rtbAuthInfo.Text.ReplaceLineBreak().Dehexify() + " ";
-                    else args += "--auth-info " + rtbAuthInfo.Text + " ";
-                } else MessagBox.Error("Program Authentication Information is empty !");
-            } else {
-                if (textBoxPaid.Text != string.Empty) args += "--paid " + textBoxPaid.Text + " ";
-                else MessagBox.Error("Program Authentication ID is empty !");
-                if (rtbAuthInfo.Text != string.Empty) {
-                    if (hexifyAuthInfoToolStrip.Checked) args += "--auth-info " + BuildAuthInfo(rtbAuthInfo.Text.Dehexify()).ReplaceLineBreak() + " ";
-                    else args += "--auth-info " + rtbAuthInfo.Text + " ";
-                } else MessagBox.Error("Program Authentication Information is empty !");
-            }     
+            if (!normalFakeToolStrip.Checked || !batchFakeToolStrip.Checked) {
+                if (normalAdvancedToolStrip.Checked || batchAdvancedToolStrip.Checked) {
+                    if (textBoxPaid.Text != string.Empty) args += "--paid " + textBoxPaid.Text + " ";
+                    else MessagBox.Error("Program Authentication ID is empty !");
+                    if (comboType.SelectedIndex > -1) args += "--ptype " + (comboType.SelectedItem.ToString().Replace(" ", "")) + " ";
+                    else MessagBox.Error("No Program Type selected !");
+                    if (textBoxAppVersion.Text != string.Empty) args += "--app-version " + textBoxAppVersion.Text + " ";
+                    else MessagBox.Error("Application version is empty !");
+                    if (textBoxFWVersion.Text != string.Empty) args += "--fw-version " + textBoxFWVersion.Text + " ";
+                    else MessagBox.Error("Firmware version is empty !");
+                    if (rtbAuthInfo.Text != string.Empty) {
+                        if (hexifyAuthInfoToolStrip.Checked) args += "--auth-info " + rtbAuthInfo.Text.ReplaceLineBreak().Dehexify() + " ";
+                        else args += "--auth-info " + rtbAuthInfo.Text + " ";
+                    } else MessagBox.Error("Program Authentication Information is empty !");
+                } else {
+                    if (textBoxPaid.Text != string.Empty) args += "--paid " + textBoxPaid.Text + " ";
+                    else MessagBox.Error("Program Authentication ID is empty !");
+                    if (rtbAuthInfo.Text != string.Empty) {
+                        if (hexifyAuthInfoToolStrip.Checked) args += "--auth-info " + BuildAuthInfo(rtbAuthInfo.Text.Dehexify()).ReplaceLineBreak() + " ";
+                        else args += "--auth-info " + rtbAuthInfo.Text + " ";
+                    } else MessagBox.Error("Program Authentication Information is empty !");
+                }
+            }
 
             // Do call.
             ProcessStartInfo run = new ProcessStartInfo();
@@ -1030,13 +1089,14 @@ namespace Make_FSELF {
                 else run.Arguments = make_fself + " " + args + elf + " " + elf.Replace(".elf", ".self");
                 python.StartInfo = run;
                 errorString = string.Empty;
-                try {
-                    python.Start();
-                    python.BeginOutputReadLine();
-                    python.BeginErrorReadLine();
-                    python.WaitForExit();
-                } catch (Exception ex) { MessageBox.Show(ex.ToString()); return; }
-                
+
+                try { python.Start(); }
+                catch (Exception) { MessagBox.Error("Can't run the python script.\nIf you have python installed, make sure to have it set in your system environment 'PATH' variable.\nIn whorst case just deinstall it and reinstall. Make sure to check the box 'set python as PATH variable' or some stuff like that."); return; }
+
+                python.BeginOutputReadLine();
+                python.BeginErrorReadLine();
+                python.WaitForExit();
+
                 if (errorString != string.Empty) MessagBox.Error(errorString);
             }
             if (!tree && batchCounter > 0) MessagBox.Show(batchCounter.ToString() + " elfs successfully fake signed !");
