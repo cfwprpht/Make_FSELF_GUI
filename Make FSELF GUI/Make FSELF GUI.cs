@@ -173,7 +173,6 @@ namespace Make_FSELF {
 
                             string[] tag = line.Split(']');
                             _apps.Add(tag[0].XReplace(@"[[]Name=?\s?", string.Empty, RegexOptions.IgnoreCase));
-                            MessagBox.Debug(tag[0].XReplace(@"[[]Name=?\s?", string.Empty, RegexOptions.IgnoreCase));
                             auth = fw = false;
                             app = true;
                         } else if (line.Contains("[Auth=", ignore)) {
