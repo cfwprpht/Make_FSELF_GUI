@@ -92,7 +92,9 @@ namespace Make_FSELF {
         /// <param name="e">The Event Arguments.</param>
         private void Make_FSELF_GUI_Load(object sender, EventArgs e) {
             // Check for python.
-            if (!SwissKnife.CheckRegKey("hklm", @"SOFTWARE\CLASSES\Applications\python.exe")) MessagBox.Warning("Looks like Python is not installed on this System !");
+            if (!SwissKnife.CheckRegKey("hklm", @"SOFTWARE\CLASSES\Applications\python.exe")) {
+                if (!SwissKnife.CheckRegKey("hklm", @"SYSTEM\CurrentControlSet\Control\Session Manager\Environment", "PYTHONHOME")) MessagBox.Warning("Looks like Python is not installed on this System !");
+            }
 
             // Tell the MessagBox Class to center the Buttons.
             MessagBox.ButtonPosition = ButtonPosition.Center;

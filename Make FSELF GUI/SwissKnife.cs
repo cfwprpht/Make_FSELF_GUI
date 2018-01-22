@@ -2546,9 +2546,9 @@ namespace Make_FSELF {
 
         /// <summary>
         /// Check for a specific Registry Key.
-        /// </summary>
-        /// <param name="keyToCheck">The key to check for. Including path.</param>
+        /// </summary>        
         /// <param name="level">The Level of he Registry to check. (hklm = Hot Key Local Machine, hkcu = Hot Key Current User,....)</param>
+        /// <param name="keyToCheck">The key to check for. Including path.</param>
         /// <returns>True if the key was found, else false.</returns>
         public static bool CheckRegKey(string level, string keyToCheck) {
             if (level == "hklm") return (Registry.LocalMachine.OpenSubKey(keyToCheck) != null);
@@ -2557,6 +2557,29 @@ namespace Make_FSELF {
             else if (level == "hku") return (Registry.Users.OpenSubKey(keyToCheck) != null);
             else if (level == "hkcc") return (Registry.CurrentConfig.OpenSubKey(keyToCheck) != null);
             else return false;
+        }
+
+        /// <summary>
+        /// Check for a specific Registry Key.
+        /// </summary>        
+        /// <param name="level">The Level of he Registry to check. (hklm = Hot Key Local Machine, hkcu = Hot Key Current User,....)</param>
+        /// <param name="keyToCheck">The key to check for. Including path.</param>
+        /// <param name="entryName">The Entry to check for of the keyToCheck.</param>
+        /// <returns>True if the key was found, else false.</returns>
+        public static bool CheckRegKey(string level, string keyToCheck, string entryName) {
+            RegistryKey key = null;
+            if (level == "hklm") key = Registry.LocalMachine.OpenSubKey(keyToCheck);
+            else if (level == "hkcu") key = Registry.CurrentUser.OpenSubKey(keyToCheck);
+            else if (level == "hkcr") key = Registry.ClassesRoot.OpenSubKey(keyToCheck);
+            else if (level == "hku") key = Registry.Users.OpenSubKey(keyToCheck);
+            else if (level == "hkcc") key = Registry.CurrentConfig.OpenSubKey(keyToCheck);
+
+            if (key != null) {
+                foreach (string keyNames in key.GetSubKeyNames()) {
+                    if (keyNames.Equals(entryName)) return true;
+                }
+            }
+            return false;
         }
 
         /// <summary>

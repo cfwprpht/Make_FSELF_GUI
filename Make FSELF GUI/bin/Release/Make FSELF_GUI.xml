@@ -2394,9 +2394,18 @@
         <member name="M:Make_FSELF.SwissKnife.CheckRegKey(System.String,System.String)">
             <summary>
             Check for a specific Registry Key.
-            </summary>
-            <param name="keyToCheck">The key to check for. Including path.</param>
+            </summary>        
             <param name="level">The Level of he Registry to check. (hklm = Hot Key Local Machine, hkcu = Hot Key Current User,....)</param>
+            <param name="keyToCheck">The key to check for. Including path.</param>
+            <returns>True if the key was found, else false.</returns>
+        </member>
+        <member name="M:Make_FSELF.SwissKnife.CheckRegKey(System.String,System.String,System.String)">
+            <summary>
+            Check for a specific Registry Key.
+            </summary>        
+            <param name="level">The Level of he Registry to check. (hklm = Hot Key Local Machine, hkcu = Hot Key Current User,....)</param>
+            <param name="keyToCheck">The key to check for. Including path.</param>
+            <param name="entryName">The Entry to check for of the keyToCheck.</param>
             <returns>True if the key was found, else false.</returns>
         </member>
         <member name="M:Make_FSELF.SwissKnife.CheckByteAndHexAllign(Make_FSELF.ByteAllign,Make_FSELF.HexAllign)">
