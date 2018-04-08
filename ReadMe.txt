@@ -28,4 +28,8 @@ Corrected a bug in the db reading routine which would cause the reading process 
 Added "Only Fake Sign" mode which just use standart make_fself.py settings without any change.
 Added the ps2-emu Authentication Information base (0x0000 for decimal) to the database.
 
+v1.3
+Changed make_fslef.py to make_fself.exe from xDPx should now work for a bigger range of users. :)
+Added a Clear Settings Function.
+
  -cfwprpht-

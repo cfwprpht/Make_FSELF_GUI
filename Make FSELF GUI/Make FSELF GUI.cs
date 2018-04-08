@@ -91,11 +91,6 @@ namespace Make_FSELF {
         /// <param name="sender">The Sender.</param>
         /// <param name="e">The Event Arguments.</param>
         private void Make_FSELF_GUI_Load(object sender, EventArgs e) {
-            // Check for python.
-            if (!SwissKnife.CheckRegKey("hklm", @"SOFTWARE\CLASSES\Applications\python.exe")) {
-                if (!SwissKnife.CheckRegKey("hklm", @"SYSTEM\CurrentControlSet\Control\Session Manager\Environment", "PYTHONHOME")) MessagBox.Warning("Looks like Python is not installed on this System !");
-            }
-
             // Tell the MessagBox Class to center the Buttons.
             MessagBox.ButtonPosition = ButtonPosition.Center;
 
@@ -137,7 +132,7 @@ namespace Make_FSELF {
 
             // In case settings path are empty.
             if (dbPath == string.Empty) dbPath = Directory.GetCurrentDirectory() + @"\authinfo.txt";
-            if (make_fself == string.Empty) make_fself = Directory.GetCurrentDirectory() + @"\make_fself.py";
+            if (make_fself == string.Empty) make_fself = Directory.GetCurrentDirectory() + @"\make_fself.exe";
 
             // Fill Combo Box and set default.
             comboType.Items.AddRange(new string[] { "  fake", "  npdrm_exec", "  npdrm_dynlib", "  system_exec", "  system_dynlib", "  host_kernel", "  secure_module", "  secure_kernel" });
@@ -202,6 +197,47 @@ namespace Make_FSELF {
                     Auths = _Auths.ToArray();
                 }
             }
+        }
+
+        /// <summary>
+        /// On Closing of Form.
+        /// </summary>
+        /// <param name="sender">The Sender.</param>
+        /// <param name="e">The Event Arguments.</param>
+        private void Make_FSELF_GUI_FormClosing(object sender, FormClosingEventArgs e) {
+            Settings sett = new Settings();
+            int mode = 0;
+            if (normalNormalToolStrip.Checked) mode = 11;
+            else if (batchNormalToolStrip.Checked) mode = 12;
+            else if (normalAdvancedToolStrip.Checked) mode = 21;
+            else if (batchAdvancedToolStrip.Checked) mode = 22;
+            sett.Mode = mode;
+            sett.LastPath = usePath;
+            sett.DbPath = dbPath;
+            sett.MfselfPath = make_fself;
+            sett.Hexify = hexifyAuthInfoToolStrip.Checked;
+            sett.ByteAllign = (int)GetByteAllign();
+            sett.HexAllign = (int)GetHexAllign();
+            sett.Save();
+        }
+
+        /// <summary>
+        /// On ToolStrip Clear Settings click do.
+        /// </summary>
+        /// <param name="sender">The Sender.</param>
+        /// <param name="e">The Event Arguments.</param>
+        private void clearSettingsToolStrip_Click(object sender, EventArgs e) {
+            if (MessagBox.Question(Buttons.YesNo, "Clear Settings ?") == DialogResult.Yes) {
+                Settings sett = new Settings();
+                sett.Reset();
+                sett.Save();
+                sett.Reload();
+                usePath = sett.LastPath;
+                dbPath = sett.DbPath;
+                make_fself = sett.MfselfPath;
+            }
+            MessagBox.Info("Will close Application now.");
+            Close();
         }
 
         /// <summary>
@@ -352,7 +388,7 @@ namespace Make_FSELF {
         private void Make_FSELF_GUI_DragDrop(object sender, DragEventArgs e) {
             string[] data = (string[])e.Data.GetData(DataFormats.FileDrop, false);
             
-            if (data[0].Contains("make_fself.py")) make_fself = data[0];
+            if (data[0].Contains("make_fself.exe")) make_fself = data[0];
             else if (data[0].Contains("authinfo.txt")) dbPath = data[0];
 
             if (treeView.Visible) {
@@ -637,10 +673,10 @@ namespace Make_FSELF {
         /// <param name="sender">The Sender.</param>
         /// <param name="e">The Event Arguments.</param>
         private void SetMFSELFToolStrip_Click(object sender, EventArgs e) {
-            string pyPath = MessagBox.ShowOpenFile("Select make_fself.py", "Python Script (*.py)|*.py", make_fself);
-            if (pyPath != string.Empty) {
-                if (pyPath.Contains("make_fself.py")) make_fself = pyPath;
-                else MessagBox.Error("That doesn't look like flat_z make_fself.py script !");
+            string exePath = MessagBox.ShowOpenFile("Select make_fself.exe", "Win App (*.exe)|*.exe", make_fself);
+            if (exePath != string.Empty) {
+                if (exePath.Contains("make_fself.exe")) make_fself = exePath;
+                else MessagBox.Error("That doesn't look like xDPx make_fself.exe !");
             }
         }
 
@@ -792,7 +828,7 @@ namespace Make_FSELF {
         /// <param name="sender">The Sender.</param>
         /// <param name="e">The Event Arguments.</param>     
         private void AboutToolStrip_Click(object sender, EventArgs e) {
-            MessagBox.Info("About", "This is a grafical Interface\nfor the python make_fself.py script of flat_z\nto Fake Sign PS4 ELFs with custom Authentication Informations.\nv1.0");
+            MessagBox.Info("About", "This is a grafical Interface\nfor the make_fself.exe port from xDPx of flat_z python script\nto Fake Sign PS4 ELFs with custom Authentication Informations.\nv1.3");
         }
 
         /// <summary>
@@ -943,6 +979,13 @@ namespace Make_FSELF {
         private void HexifyAuthInfoContextMenu_Click(object sender, EventArgs e) { hexifyAuthInfoToolStrip.PerformClick(); }
 
         /// <summary>
+        /// On Context Menu Clear Settings click do.
+        /// </summary>
+        /// <param name="sender">The Sender.</param>
+        /// <param name="e">The Event Arguments.</param>
+        private void contextClearSettingsToolStrip_Click(object sender, EventArgs e) { clearSettingsToolStrip.PerformClick(); }
+
+        /// <summary>
         /// On Context Menu About click do.
         /// </summary>
         /// <param name="sender">The Sender.</param>
@@ -978,50 +1021,11 @@ namespace Make_FSELF {
         private void ClearContextMenu_Click(object sender, EventArgs e) { rtbAuthInfo.Clear(); }
 
         /// <summary>
-        /// On Tool Strip Python Call Script click do.
-        /// </summary>
-        /// <param name="sender">The Sender.</param>
-        /// <param name="e">The Event Arguments.</param>
-        private void PythonCallToolStrip_Click(object sender, EventArgs e) {
-            if (pythonCallToolStrip.Checked) pythonCallToolStrip.Checked = pythonCallContextMenu.Checked = false;
-            else pythonCallToolStrip.Checked = pythonCallContextMenu.Checked = true;
-        }
-
-        /// <summary>
-        /// On ContextMenu Python Call Script click do.
-        /// </summary>
-        /// <param name="sender">The Sender.</param>
-        /// <param name="e">The Event Arguments.</param>
-        private void PythonCallContextMenu_Click(object sender, EventArgs e) { pythonCallToolStrip.PerformClick(); }
-
-        /// <summary>
         /// On Only Fake Sign Menu Context click do.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void OnlyFakeSignContextMenu_Click(object sender, EventArgs e) { onlyFakeSignToolStrip.PerformClick(); }
-
-        /// <summary>
-        /// On Closing of Form.
-        /// </summary>
-        /// <param name="sender">The Sender.</param>
-        /// <param name="e">The Event Arguments.</param>
-        private void Make_FSELF_GUI_FormClosing(object sender, FormClosingEventArgs e) {
-            Settings sett = new Settings();
-            int mode = 0;
-            if (normalNormalToolStrip.Checked) mode = 11;
-            else if (batchNormalToolStrip.Checked) mode = 12;
-            else if (normalAdvancedToolStrip.Checked) mode = 21;
-            else if (batchAdvancedToolStrip.Checked) mode = 22;
-            sett.Mode = mode;
-            sett.LastPath = usePath;
-            sett.DbPath = dbPath;
-            sett.MfselfPath = make_fself;
-            sett.Hexify = hexifyAuthInfoToolStrip.Checked;
-            sett.ByteAllign = (int)GetByteAllign();
-            sett.HexAllign = (int)GetHexAllign();
-            sett.Save();
-        }
+        private void OnlyFakeSignContextMenu_Click(object sender, EventArgs e) { onlyFakeSignToolStrip.PerformClick(); }        
 
         /// <summary>
         /// On Button Fake Sign ELF Click.
@@ -1031,7 +1035,7 @@ namespace Make_FSELF {
         private void ButtonFSELF_Click(object sender, EventArgs e) {
             // Check for make_fself.py script.            
             if (!File.Exists(make_fself)) {
-                MessagBox.Error("Can not find make_fself.py script !\nPlease place the script into the same Folder then this App runs from.\nOr define a path to the script.");
+                MessagBox.Error("Can not find make_fself.exe !\nPlease place the file into the same Folder then this App runs from.\nOr define a path to the app.");
                 return;
             }
 
@@ -1075,28 +1079,25 @@ namespace Make_FSELF {
 
             // Do call.
             ProcessStartInfo run = new ProcessStartInfo();
-            Process python = new Process();
-            python.OutputDataReceived += MFSELF_OutputHandler;
-            python.ErrorDataReceived += MFSELF_ErrorHandler;
+            Process mfself = new Process();
+            mfself.OutputDataReceived += MFSELF_OutputHandler;
+            mfself.ErrorDataReceived += MFSELF_ErrorHandler;
 
-            if (pythonCallToolStrip.Checked) run.FileName = make_fself;
-            else run.FileName = "python.exe";
-
+            run.FileName = make_fself;
             run.UseShellExecute = false;
             run.RedirectStandardOutput = run.CreateNoWindow = run.RedirectStandardError = true;            
 
             foreach (string elf in toFakeSign) {
-                if (pythonCallToolStrip.Checked) run.Arguments = args + elf + " " + elf.Replace(".elf", ".self");
-                else run.Arguments = make_fself + " " + args + elf + " " + elf.Replace(".elf", ".self");
-                python.StartInfo = run;
+                run.Arguments = args + elf + " " + elf.Replace(".elf", ".self");
+                mfself.StartInfo = run;
                 errorString = string.Empty;
 
-                try { python.Start(); }
-                catch (Exception) { MessagBox.Error("Can't run the python script.\nIf you have python installed, make sure to have it set in your system environment 'PATH' variable.\nIn whorst case just deinstall it and reinstall. Make sure to check the box 'set python as PATH variable' or some stuff like that."); return; }
+                try { mfself.Start(); }
+                catch (Exception) { MessagBox.Error("Can't run the executable."); return; }
 
-                python.BeginOutputReadLine();
-                python.BeginErrorReadLine();
-                python.WaitForExit();
+                mfself.BeginOutputReadLine();
+                mfself.BeginErrorReadLine();
+                mfself.WaitForExit();
 
                 if (errorString != string.Empty) MessagBox.Error(errorString);
             }

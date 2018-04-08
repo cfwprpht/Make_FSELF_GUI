@@ -236,6 +236,20 @@
             <param name="sender">The Sender.</param>
             <param name="e">The Event Arguments.</param>
         </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.Make_FSELF_GUI_FormClosing(System.Object,System.Windows.Forms.FormClosingEventArgs)">
+            <summary>
+            On Closing of Form.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.clearSettingsToolStrip_Click(System.Object,System.EventArgs)">
+            <summary>
+            On ToolStrip Clear Settings click do.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
         <member name="M:Make_FSELF.Make_FSELF_GUI.GuiAdvanced">
             <summary>
             Draw GUI in advanced mode.
@@ -708,6 +722,13 @@
             <param name="sender">The Sender.</param>
             <param name="e">The Event Arguments.</param>
         </member>
+        <member name="M:Make_FSELF.Make_FSELF_GUI.contextClearSettingsToolStrip_Click(System.Object,System.EventArgs)">
+            <summary>
+            On Context Menu Clear Settings click do.
+            </summary>
+            <param name="sender">The Sender.</param>
+            <param name="e">The Event Arguments.</param>
+        </member>
         <member name="M:Make_FSELF.Make_FSELF_GUI.AboutContextMenu_Click(System.Object,System.EventArgs)">
             <summary>
             On Context Menu About click do.
@@ -743,33 +764,12 @@
             <param name="sender">The Sender.</param>
             <param name="e">The Event Arguments.</param>
         </member>
-        <member name="M:Make_FSELF.Make_FSELF_GUI.PythonCallToolStrip_Click(System.Object,System.EventArgs)">
-            <summary>
-            On Tool Strip Python Call Script click do.
-            </summary>
-            <param name="sender">The Sender.</param>
-            <param name="e">The Event Arguments.</param>
-        </member>
-        <member name="M:Make_FSELF.Make_FSELF_GUI.PythonCallContextMenu_Click(System.Object,System.EventArgs)">
-            <summary>
-            On ContextMenu Python Call Script click do.
-            </summary>
-            <param name="sender">The Sender.</param>
-            <param name="e">The Event Arguments.</param>
-        </member>
         <member name="M:Make_FSELF.Make_FSELF_GUI.OnlyFakeSignContextMenu_Click(System.Object,System.EventArgs)">
             <summary>
             On Only Fake Sign Menu Context click do.
             </summary>
             <param name="sender"></param>
             <param name="e"></param>
-        </member>
-        <member name="M:Make_FSELF.Make_FSELF_GUI.Make_FSELF_GUI_FormClosing(System.Object,System.Windows.Forms.FormClosingEventArgs)">
-            <summary>
-            On Closing of Form.
-            </summary>
-            <param name="sender">The Sender.</param>
-            <param name="e">The Event Arguments.</param>
         </member>
         <member name="M:Make_FSELF.Make_FSELF_GUI.ButtonFSELF_Click(System.Object,System.EventArgs)">
             <summary>
